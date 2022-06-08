@@ -36,4 +36,4 @@
 </pre></p>
 
 
-<p><code>##This Project Under</code> <pre> <a href="https://t.me/SILENT_DEVS"><img src="https://img.shields.io/badge/Join-Team%20%20Silent-blue?style=for-the-badge&logo=telegram"></a></pre>
+<p><code></code> <pre> <a href="https://t.me/HeroOfficialBots"><img src="https://img.shields.io/badge/Join-Hero%20%20Bots-blue?style=for-the-badge&logo=telegram"></a></pre>
