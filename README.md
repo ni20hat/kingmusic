@@ -1,4 +1,4 @@
-## `DevuMusic`
+## `MUSICx100`
 >Lag Free music bot for telegram 💞
 <p align="center"><h6> <code>Telegram Music</code> </h6>
 
@@ -20,12 +20,6 @@
 <code>ItsmeHyper13: Main Credit</code><br>
 <code>Nub Hu vro Schhi me🥲🥲</code><br>
 </details>
-
-
-
-<h4><b><i>You Can Ask any Query Related about This Project just click on button below</i></b></h4>
-<p align="center">
-<a href="https://t.me/SilentVerse"><img src="https://img.shields.io/badge/Ask%20-anything-1abc9c.svg"></a>
 
 
 <p align="center">
