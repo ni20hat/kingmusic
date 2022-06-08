@@ -31,8 +31,8 @@
 <p align="center">
 <pre>
 <h3><b><i>Forks nd Stars</i></b></h3>
-<img src="https://img.shields.io/github/license/ItsmeHyper13/DevuMusic.svg"> <img src="https://img.shields.io/github/forks/ItsmeHyper13/DevuMusic.svg"> <img src="https://img.shields.io/github/stars/ItsmeHyper13/DevuMusic.svg">
-<a href="https://github.com/ItsmeHyper13/DevuMusic"><img src="https://img.shields.io/badge/Fork%20Devu%20Music-black?style=for-the-badge&logo=github"></a>
+<img src="https://img.shields.io/github/license/ShailendraOP/Musicx100.svg"> <img src="https://img.shields.io/github/forks/ShailendraOP/Musicx100.svg"> <img src="https://img.shields.io/github/stars/ShailendraOP/Musicx100.svg">
+<a href="https://github.com/ShailendraOP/Musicx100"><img src="https://img.shields.io/badge/Fork%20Hero%20Music-cyan?style=for-the-badge&logo=github"></a>
 </pre></p>
 
 
