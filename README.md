@@ -7,7 +7,7 @@
 <img src='https://telegra.ph/file/ceda1580c90e06991e883.png' alternate="Aww Reload Aunty It's Your internet issue" height="250px">
 
 </pre>
-<details><summary> <h3><b>Deployment!</b></h3> </summary>
+<details><summary> <h3><b>Deployment</b></h3> </summary>
 <pre>
 
 <b>Deploy to Heroku</b>
