@@ -167,14 +167,14 @@ async def play(_, message: Message):
         file_path = await converter.convert(youtube.download(url))
     ACTV_CALLS = []
     chat_id = message.chat.id
-    for x in clientbot.pytgcalls.active_calls:
+    for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         await lel.edit("**💥 Ʌɗɗɘɗ 💿 Søɳʛ❗️\n🔊 Ʌʈ 💞 Ƥøsɩʈɩøɳ » `{}` 🌷 ...**".format(position),
     )
     else:
-        await clientbot.pytgcalls.join_group_call(
+        await callsmusic.pytgcalls.join_group_call(
                 chat_id, 
                 InputStream(
                     InputAudioStream(
@@ -196,7 +196,7 @@ async def play(_, message: Message):
 @sudo_users_only
 async def pause(_, message: Message):
     await message.delete()
-    await clientbot.pytgcalls.pause_stream(message.chat.id)
+    await callsmusic.pytgcalls.pause_stream(message.chat.id)
     pase = await message.reply_text("**▶️ Ƥɑʋsɘɗ 🌷...**")
     await pase.delete()
 
@@ -205,7 +205,7 @@ async def pause(_, message: Message):
 @sudo_users_only
 async def resume(_, message: Message):
     await message.delete()
-    await clientbot.pytgcalls.resume_stream(message.chat.id)
+    await callsmusic.pytgcalls.resume_stream(message.chat.id)
     rsum = await message.reply_text("**⏸ Ʀɘsʋɱɘɗ 🌷...**")
     await rsum.delete()
 
@@ -218,7 +218,7 @@ async def skip(_, message: Message):
     await message.delete()
     ACTV_CALLS = []
     chat_id = message.chat.id
-    for x in clientbot.pytgcalls.active_calls:
+    for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
        novc = await message.reply_text("**💥 Ɲøʈɦɩɳʛ 🔇 Ƥɭɑyɩɳʛ 🌷...**")
@@ -229,15 +229,15 @@ async def skip(_, message: Message):
         if queues.is_empty(chat_id):
             empt = await message.reply_text("**🥀 Nøʈɦɩɳʛ 💫 ʈø 💥 ɭɘɑⱱɩɳʛ ⚡ VC ✨...**")
             await empt.delete()
-            await clientbot.pytgcalls.leave_group_call(chat_id)
+            await callsmusic.pytgcalls.leave_group_call(chat_id)
         else:
             next = await message.reply_text("**⏩ Sƙɩƥƥɘɗ 🌷...**")
             await next.delete()
-            await clientbot.pytgcalls.change_stream(
+            await callsmusic.pytgcalls.change_stream(
                 chat_id, 
                 InputStream(
                     InputAudioStream(
-                        clientbot.queues.get(chat_id)["file"],
+                        callsmusic.queues.get(chat_id)["file"],
                     ),
                 ),
             )
@@ -250,10 +250,10 @@ async def skip(_, message: Message):
 async def stop(_, message: Message):
     await message.delete()
     try:
-        clientbot.queues.clear(message.chat.id)
+        callsmusic.queues.clear(message.chat.id)
     except QueueEmpty:
         pass
 
-    await clientbot.pytgcalls.leave_group_call(message.chat.id)
+    await callsmusic.pytgcalls.leave_group_call(message.chat.id)
     leav = await message.reply_text("**❌ Sʈøƥƥɘɗ 🌷...**")
     await leav.delete()
