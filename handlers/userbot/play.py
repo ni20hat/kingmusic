@@ -62,7 +62,7 @@ def time_to_seconds(time):
 
 
 @USER.on_message(
-    commandpro(["p", "play", "/play", "@", "ply"])
+    commandpro(["p", "!p", ".p", "/ply", "!ply", "@", "ply"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
