@@ -11,7 +11,7 @@
 <pre>
 
 <b>Deploy to Heroku</b>
-<p><a href="https://heroku.com/deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://app.koyeb.com/deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="200""/></a></p>
 </pre>
 </details>
 <details>
