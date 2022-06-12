@@ -28,14 +28,6 @@
 <a href="https://t.me/SilentVerse"><img src="https://img.shields.io/badge/Ask%20-anything-1abc9c.svg"></a>
 
 
-<p align="center">
-<pre>
-<h3><b><i>Forks nd Stars</i></b></h3>
-<img src="https://img.shields.io/github/license/ItsmeHyper13/DevuMusic.svg"> <img src="https://img.shields.io/github/forks/ItsmeHyper13/DevuMusic.svg"> <img src="https://img.shields.io/github/stars/ItsmeHyper13/DevuMusic.svg">
-<a href="https://github.com/ItsmeHyper13/DevuMusic"><img src="https://img.shields.io/badge/Fork%20Devu%20Music-black?style=for-the-badge&logo=github"></a>
-</pre></p>
-
-
 <h6><b><i><u>Here Devu Robot Which can handle Your group safely Nd play lag free Music too Check Out this too</u></i></b></h6>
 <p><a href='https://t.me/DEVU_ROBOT'><img src="https://img.shields.io/badge/Devu_Robot-black?style=for-the-badge&logo=telegram&logoColor=black"></a>
 <a href="https://t.me/ShiningOff"><img src="https://img.shields.io/badge/Developer%20%20-black?style=for-the-badge&logo=telegram"></a></p>
