@@ -1,6 +1,6 @@
 from pyrogram import Client, filters 
 from pyrogram.types import Message
-from modules.config import SUDO_USERS
+from config import SUDO_USERS
 import asyncio
 
 
