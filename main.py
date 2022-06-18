@@ -25,7 +25,6 @@ async def main():
             await USER.join_chat("YAARO_KI_YAARII")
             await USER.join_chat("HEROOFFICIALBOTS")
             await USER.join_chat("ABOUTSHAILENDRA")
-            await USER.join_chat("SHAILENDRA34")
             await USER.join_chat("MODMENUMAKING")
         except UserAlreadyParticipant:
             pass
