@@ -2,7 +2,7 @@
   "name": "𝐌𝐔𝐒𝐈𝐂𝐱𝟏𝟎𝟎",
   "description": "ʙᴏᴛ ᴛᴏ ᴘʟᴀʏ sᴏɴɢs ɪɴ ʏᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ's ɢʀᴏᴜᴘ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴘᴏᴡᴇʀᴇᴅ ʙʏ PʏTɢCᴀʟʟs.",
   "keywords": ["voicechat", "telegram"],
-  "logo": "https://te.legra.ph/file/a4c16c60dd1c46bbe7385.jpg",
+  "logo": "https://te.legra.ph/file/595084e5fcf831ae235fd.jpg",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
