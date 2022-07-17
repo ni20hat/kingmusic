@@ -53,10 +53,11 @@ def help_(bot, message):
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
     message.delete()
-
 @bot.on_callback_query() 
-def callback_query(Client, callback: CallbackQuery):
-    print('cb', flush=True)
+
+def callback_query(Client, callback: CallbackQuery):
+
+    print(callback, flush=True)
     if callback.data == "help_":
     
         HELP_TXT = f"""Merhaba işte yardım menüsü istediğiniz seçeneğinizi seçin ve keşfedin \nHer türlü yardım veya sorun için katılın @{SUPPORT_GROUP} Sorununuz nedir 💫?"""
