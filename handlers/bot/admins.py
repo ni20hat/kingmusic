@@ -34,7 +34,7 @@ BUTTON = [
 
 ACTV_CALLS = []
 
-@Client.on_message(commandpro(["/pause", "!pause", "durdur", "pause"]) & other_filters)
+@Client.on_message(commandpro(["/pause", "!pause", "durdur", "/durdur", "pause"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -42,13 +42,13 @@ async def pause(_, message: Message):
     
     await message.reply_photo(
         photo=PAUSED,
-        caption=f"Müzik durduruldu durduran {message.from_user.mention} 🥀\n\n✦ /resume :- müziği devam ettir",
+        caption=f"Müzik durduruldu durduran {message.from_user.mention} 🥀\n\n✦ /devam :- müziği devam ettir",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
 
 
-@Client.on_message(commandpro(["/resume", "!resume", "devam", "resume"]) & other_filters)
+@Client.on_message(commandpro(["/resume", "!resume", "devam", "/resime", "resume"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -56,13 +56,13 @@ async def resume(_, message: Message):
     
     await message.reply_photo(
         photo=RESUMED,
-        caption=f"müzik devam ediyor sen {message.from_user.mention} 💫.\n\n✦ /pause :- şarkıyı duraklat!!",
+        caption=f"müzik devam ediyor {message.from_user.mention} 💫.\n\n✦ /durdur :- şarkıyı duraklat!!",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
 
 
-@Client.on_message(commandpro(["/end", "!end", "/stop", "!stop", "son", "stop", "end"]) & other_filters)
+@Client.on_message(commandpro(["/end", "!end", "/stop", "!stop", "/son", "son", "stop", "end"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -89,7 +89,7 @@ async def stop(_, message: Message):
         await message.delete()
     
 
-@Client.on_message(commandpro(["/skip", "!skip", "atla", "skip"]) & other_filters)
+@Client.on_message(commandpro(["/skip", "!skip", "atla", "/atla", "skip"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
