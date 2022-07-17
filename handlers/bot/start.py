@@ -54,8 +54,9 @@ def help_(bot, message):
     )
     message.delete()
 
-@bot.on_callback_query()
-def callback_query(Client, callback: CallbackQuery):
+@bot.on_callback_query() 
+def callback_query(Client, callback: CallbackQuery):
+    print('cb', flush=True)
     if callback.data == "help_":
     
         HELP_TXT = f"""Merhaba işte yardım menüsü istediğiniz seçeneğinizi seçin ve keşfedin \nHer türlü yardım veya sorun için katılın @{SUPPORT_GROUP} Sorununuz nedir 💫?"""
