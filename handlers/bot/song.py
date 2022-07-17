@@ -1,4 +1,4 @@
-# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @SHAILENDRA34 | 
+# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @Samilben | 
 # 𝐃𝐞𝐚𝐫 𝐏𝐞𝐫𝐨 𝐩𝐩𝐥𝐬 𝐏𝐥𝐢𝐬𝐡 𝐃𝐨𝐧'𝐭 𝐫𝐞𝐦𝐨𝐯𝐞 𝐭𝐡𝐢𝐬 𝐥𝐢𝐧𝐞 𝐟𝐫𝐨𝐦 𝐡𝐞𝐫𝐞 🌚
 
 
@@ -15,7 +15,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-@Client.on_message(filters.command('song') & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command('bul') & ~filters.private & ~filters.channel)
 def song(client, message):
 
     user_id = message.from_user.id 
@@ -26,7 +26,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply("ᴡᴀɪᴛ, sᴇᴀʀᴄʜɪɴɢ ʏᴏᴜʀ ǫᴜᴀʀʏ ғʀᴏᴍ ᴅᴇᴛᴀʙᴀsᴇ👩‍💻...")
+    m = message.reply("Lütfen bekleyiniz arıyorum 🌟🌟")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -45,17 +45,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "ᴏᴘᴘs, sᴏʀʀʏ ɴᴛɢ ɪᴢ ғᴏᴜɴᴅ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ ɴᴅ sᴇᴀʀᴄʜ ᴀɢᴀɪɴ🧚‍♀️🧚‍♀️"
+            "Sorgunuz bulunamadı tekrar deneyin🌟"
         )
         print(str(e))
         return
-    m.edit("ʏᴏ, ʏᴏᴜʀ sᴏɴɢ ɪᴢ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ғʀᴏᴍ ᴅᴇᴠᴜ sᴇʀᴠᴇʀ🥀🥀.")
+    m.edit("Sorgunuz sunucu tarafından yüklendi")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**ᴜᴘʟᴏᴀᴅᴇʀ 🥀 :-  [ʙᴏᴛ‍ 💖](https://t.me/HEROMUSICS_BOT)**"
+        rep = f"**Güncelleme 🥀 :-  [Oxygen Music](https://t.me/oxygenmuzik_bot)**"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -63,7 +63,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit("`ᴏᴘᴘs, ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴇʀʀᴏʀ ᴛʀʏ ᴀɢᴀɪɴ💫..")
+        m.edit("`indirme hatası tekrar deneyin!!")
         print(e)
 
     try:

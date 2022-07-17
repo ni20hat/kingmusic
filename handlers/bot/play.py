@@ -1,4 +1,4 @@
-# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @SHAILENDRA34 | 
+# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @Samilben | 
 # 𝐃𝐞𝐚𝐫 𝐏𝐞𝐫𝐨 𝐩𝐩𝐥𝐬 𝐏𝐥𝐢𝐬𝐡 𝐃𝐨𝐧'𝐭 𝐫𝐞𝐦𝐨𝐯𝐞 𝐭𝐡𝐢𝐬 𝐥𝐢𝐧𝐞 𝐟𝐫𝐨𝐦 𝐡𝐞𝐫𝐞 🌚
 
 
@@ -95,7 +95,7 @@ def close(Client, callback: CallbackQuery):
         callback.message.delete()
 
 @Client.on_message(
-    commandpro(["/ytp", "!ytp", "ytp", "/play", "!play", "/p", "play"])
+    commandpro(["/ytp", "oynat", "!ytp", "ytp", "/play", "!play", "/p", "play"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -115,7 +115,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "HeroMusic"
+        user.first_name = "OxygenMusic"
     usar = user
     wew = usar.id
     try:
@@ -127,25 +127,25 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b><i>sʜʜ, ɪ ᴍ ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ʜᴇʀᴇ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ғɪʀsᴛ ᴛᴏ ᴘʟᴀʏ sᴏɴɢs‍ 🥀</i></b>")
+                        "<b><i>Şarkı çalabilmem için yönetici olmam gerekiyor lütfen yönetici yapın beni!</i></b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "ᴍᴜsɪᴄ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴡᴏᴡ‍ 🥀")
+                        message.chat.id, "Müzik asistanı gruba katıldı")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b><i>ᴜɴᴀʙʟᴇ ᴛᴏ ᴘʟᴀʏ sᴏɴɢs 😕, ᴍᴀᴋᴇ sᴜʀᴇ ᴀssɪsᴛᴀɴᴛ ɪᴢ ɴᴏᴛ ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ɴᴅ ᴛʀʏ ᴀɢᴀɪɴ 💥</i></b>")
+                        f"<b><i>Şarkı çalmıyor asistanın banlanmadığına emin olun🌟🌟</i></b>")
     
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i><b>ᴏᴏᴘs sᴏʀʀʏ {user.first_name}, ᴀssɪsᴛᴀɴᴛ ɪᴢ ɴᴏᴛ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ᴘʟɪsʜ ᴛᴇʟʟ ʏᴏᴜʀ ᴀᴅᴍɪɴs ᴜsᴇ /join ᴄᴏᴍᴍᴀɴᴅ ʙᴇғᴏʀᴇ ᴘʟᴀʏ sᴏɴɢs 🌷</b></i>")
+            f"<i><b>bekleyin {user.first_name}, Asistanı gruba eklemek için /katil yazınız 🌟🌟</b></i>")
         return
     
     audio = (
@@ -158,12 +158,12 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 360) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**ɢɪᴠᴇɴ ǫᴜᴀʀʏ ɪᴢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴛʜᴀᴛ ᴀʀᴇɴ'ᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴅᴜᴇ ᴛᴏ ʜᴇᴀᴠʏ ᴜsᴀɢᴇ‍ ❌**"
+                f"**İstenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlar için izin verilmiyor❌**"
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/9350788513346feef5087.jpg"
+        thumb_name = "https://telegra.ph/file/754c32d3fe8dd9e5f4c08.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -172,14 +172,14 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="𝐆𝐫𝐨𝐮𝐩 💫",
-                            url=f"https://t.me/Yaaro_ki_yaarii"),
+                            text="Sohbet 💫",
+                            url=f"https://t.me/Sohbetimalfa"),
                     InlineKeyboardButton(
-                            text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⭐",
-                            url=f"https://t.me/HeroOfficialBots"),
+                            text="Sahibim ⭐",
+                            url=f"https://t.me/Samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),                   
                ],
             ]
         )
@@ -216,42 +216,42 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="𝐆𝐫𝐨𝐮𝐩 💫",
-                            url=f"https://t.me/Yaaro_ki_yaarii"),
+                            text="Sohbet 💫",
+                            url=f"https://t.me/Sohbetimalfa"),
                     InlineKeyboardButton(
-                            text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⭐",
-                            url=f"https://t.me/HeroOfficialBots"),
+                            text="Sahibim ⭐",
+                            url=f"https://t.me/samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),                   
                ],
             ]
         )
     
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/9350788513346feef5087.jpg"
+            thumb_name = "https://telegra.ph/file/754c32d3fe8dd9e5f4c08.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                            text="𝐆𝐫𝐨𝐮𝐩 💫",
-                            url=f"https://t.me/Yaaro_ki_yaarii"),
+                            text="Sohbet 💫",
+                            url=f"https://t.me/Sohbetimalfa"),
                     InlineKeyboardButton(
-                            text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⭐",
-                            url=f"https://t.me/HeroOfficialBots"),
+                            text="Sahibim ⭐",
+                            url=f"https://t.me/Samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),                   
                ],
             ]
         )
     
         if (dur / 360) > DURATION_LIMIT:
             await lel.edit(
-                f"**ɢɪᴠᴇɴ ǫᴜᴀʀʏ ɪᴢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴛʜᴀᴛ ᴀʀᴇɴ'ᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴅᴜᴇ ᴛᴏ ʜᴇᴀᴠʏ ᴜsᴀɢᴇ‍ ❌**"
+                f"**İstenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlar için izin verilmiyor ‍ ❌**"
             )
             return
         requested_by = message.from_user.first_name
@@ -260,9 +260,9 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "ᴜsᴀɢᴇ:-\n `/play` sᴏɴɢ ɴᴀᴍᴇ | ʏᴛ ʟɪɴᴋ | ᴛɢ ᴀᴜᴅɪᴏ ғɪʟᴇ 🙋‍♀️"
+                "Kullanım:-\n `/oynat` Şarkı adı, YouTube linki, Ses dosyası "
             )
-        await lel.edit("ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ǫᴜᴇʀʏ 🌷")
+        await lel.edit("sorgunuz aranıyor 🌟🌟")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -287,7 +287,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**ɴᴛɢ ɪᴢ ғᴏᴜɴᴅ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ ɴᴀᴍᴇ ɴᴅ ᴛʀʏ ᴀɢᴀɪɴ 💫💖**"
+                "**Sorgunuz bulunamadı tekrar deneyin **"
             )
             print(str(e))
             return
@@ -296,21 +296,21 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="𝐆𝐫𝐨𝐮𝐩 💫",
-                            url=f"https://t.me/Yaaro_ki_yaarii"),
+                            text="sohbet 💫",
+                            url=f"https://t.me/Sohbetimalfa"),
                     InlineKeyboardButton(
-                            text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⭐",
-                            url=f"https://t.me/HeroOfficialBots"),
+                            text="sahibim ⭐",
+                            url=f"https://t.me/Samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),                   
                ],
             ]
         )
     
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**ɢɪᴠᴇɴ ǫᴜᴀʀʏ ɪᴢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴛʜᴀᴛ ᴀʀᴇɴ'ᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴅᴜᴇ ᴛᴏ ʜᴇᴀᴠʏ ᴜsᴀɢᴇ ❌**"
+                f"**istenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlara izin verilmiyor ❌**"
             )
             return
         requested_by = message.from_user.first_name
@@ -324,7 +324,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)      
         await message.reply_photo(
             photo="final.png",
-            caption="****ʏᴏᴜʀ sᴏɴɢ ɪᴢ ᴀᴅᴅᴇᴅ ɪɴ ᴛʜᴇ ǫᴜᴇᴜᴇ🥀💖 \n\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {} \nᴘᴏsɪᴛɪᴏɴ :-** {}**".format(usrid, position),
+            caption="****Şarkınız sıraya eklendi \n\nİsteyen: {} \nDurum :-** {}**".format(usrid, position),
             reply_markup=keyboard,
         )
         await message.delete()
@@ -343,7 +343,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**ɴᴏᴡ ɪ ᴍ ᴘʟᴀʏɪɴɢ ᴛʜᴇ ǫᴜᴇᴜᴇᴅ sᴏɴɢ 🌷️.\n\nᴘʟᴀʏɪɴɢ ᴀᴛ‍ 💫 :- `{}`...**\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {}".format(
+            caption="**Şimdi sıradaki şarkıya geçiyorum ️.\n\nOynatılıyor 💫 :- `{}`...**\nİsteyen: {}".format(
         message.chat.title, usrid
         ), )
         

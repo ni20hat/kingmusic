@@ -12,19 +12,19 @@ from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
     
-    START_TEXT = """ʜᴇʏ {}\n\nᴍʏsᴇʟғ {} \nᴀ sɪᴍᴘʟᴇ , ʟᴀɢ ғʀᴇᴇ ᴀɴᴅ ғʟᴇxɪʙʟᴇ ᴍᴜsɪᴄ ʙᴏᴛ 🌷\nɪғ ʏᴏᴜ ғᴀᴄɪɴɢ ᴀɴʏ ɪssᴜᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜɪs ᴍᴜsɪᴄ ʙᴏᴛ ᴛʜᴇɴ ᴘʟᴇᴀsᴇ ᴊᴏɪɴ @{}\nғᴏʀ ᴍᴏʀᴇ ʜᴇʟᴘ ʏᴏᴜ ᴄᴀɴ ᴇxᴘʟᴏʀᴇʀ ʜᴇʟᴘ ᴍᴇɴᴜ ʙʏ ᴛᴀᴘᴘɪɴɢ ᴏɴ /help 💥"""
+    START_TEXT = """⭐⭐Merhaba {}\n\nben {} \nbasit bir müzik botuyum\nbu botla herhangi bir sorun olduğunda Sahibim ile iletişime geçiniz kendisi bu grupta vardır @{}\nDaha fazla yardım için  /help ⭐⭐"""
 
     START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="𝐔𝐩𝐝𝐚𝐭𝐞𝐬 💫", url=f"https://t.me/HeroOfficialBots"),
-                    InlineKeyboardButton(text="𝐀𝐝𝐝 𝐌𝐞 ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
+                    InlineKeyboardButton(text="kanal 💫", url=f"https://t.me/SamilBots"),
+                    InlineKeyboardButton(text="Beni gruba ekleyin➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton(text="𝐃𝐞𝐯 ✨", url="https://t.me/Shailendra34"),
+                    InlineKeyboardButton(text="Sahibim ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton(text="sohbet grubu ✨", url="https://t.me/Sohbetimalfa"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 📒", callback_data="help_"),
+                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),
                 ],
                 
             ]
@@ -36,16 +36,16 @@ def start_(bot, message):
 
 @bot.on_message(filters.command("help"))
 def help_(bot, message):
-    HELP_TXT = """ʜᴏɪ {}\nʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅᴇsɪʀᴇ ᴏᴘᴛɪᴏɴ ɴᴅ ᴇxᴘʟᴏʀᴇʀ ɪᴛ\nғᴏʀ ᴀɴʏ ᴋɪɴᴅ ᴏғ ʜᴇʟᴘ ᴏʀ ǫᴜᴇʀʏ ᴊᴜsᴛ ᴊᴏɪɴ @{} ᴀɴᴅ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ 💫"""
+    HELP_TXT = """Merhaba {}\nişte yardım menüsü \nGrubuna ekleyerek müzik keyfine başlayabilirsiniz @{} sorununuz nedir? 💫"""
     
     HELP_BUTTON = [
         [
-            InlineKeyboardButton(text="📒 ʙᴀsɪᴄ", callback_data="basic_"),
-            InlineKeyboardButton(text="📒 ᴀᴅᴠᴀɴᴄᴇ", callback_data="admin_cmd"),
+            InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic_"),
+            InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin_cmd"),
         ],
         [
-            InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),
-            InlineKeyboardButton(text="⬅️ ʙᴀᴄᴋ", callback_data="HOME"),
+            InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+            InlineKeyboardButton(text="⬅️ Geri", callback_data="HOME"),
         ],
     ]
     message.reply_text(
@@ -58,16 +58,16 @@ def help_(bot, message):
 def callback_query(Client, callback: CallbackQuery):
     if callback.data == "help_":
     
-        HELP_TXT = f"""ʜᴏɪ, ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅᴇsɪʀᴇ ᴏᴘᴛɪᴏɴ ɴᴅ ᴇxᴘʟᴏʀᴇʀ ɪᴛ\nғᴏʀ ᴀɴʏ ᴋɪɴᴅ ᴏғ ʜᴇʟᴘ ᴏʀ ǫᴜᴇʀʏ ᴊᴜsᴛ ᴊᴏɪɴ @{SUPPORT_GROUP} ᴀɴᴅ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ 💫"""
+        HELP_TXT = f"""Merhaba işte yardım menüsü istediğiniz seçeneğinizi seçin ve keşfedin \nHer türlü yardım veya sorun için katılın @{SUPPORT_GROUP} Sorununuz nedir 💫?"""
     
         HELP_BUTTON = [
             [
-                InlineKeyboardButton(text="📒 ʙᴀsɪᴄ", callback_data="basic_"),
-                InlineKeyboardButton(text="📒 ᴀᴅᴠᴀɴᴄᴇ", callback_data="admin_cmd"),
+                InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic_"),
+                InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin_cmd"),
             ],
             [
-                InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),
-                InlineKeyboardButton(text="⬅️ ʙᴀᴄᴋ", callback_data="HOME"),
+                InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+                InlineKeyboardButton(text="⬅️ Geri", callback_data="HOME"),
             ],
         ]
         callback.edit_message_text(
@@ -76,18 +76,18 @@ def callback_query(Client, callback: CallbackQuery):
         )
     elif callback.data == "HOME":
  
-        START_TEXT = f"""ʜᴇʏ, ᴍʏsᴇʟғ {BOT_NAME} \nᴀ sɪᴍᴘʟᴇ , ʟᴀɢ ғʀᴇᴇ ᴀɴᴅ ғʟᴇxɪʙʟᴇ ᴍᴜsɪᴄ ʙᴏᴛ 💥\nɪғ ʏᴏᴜ ғᴀᴄɪɴɢ ᴀɴʏ ɪssᴜᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜɪs ᴍᴜsɪᴄ ʙᴏᴛ ᴛʜᴇɴ ᴘʟᴇᴀsᴇ ᴊᴏɪɴ @{SUPPORT_GROUP}\nғᴏʀ ᴍᴏʀᴇ ʜᴇʟᴘ ʏᴏᴜ ᴄᴀɴ ᴇxᴘʟᴏʀᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ʙʏ ᴛᴀᴘᴘɪɴɢ ᴏɴ /help """
+        START_TEXT = f"""Merhaba, ben {BOT_NAME} \nBasit ve gecikmesiz bir bottur\nHerhangi bir sorun olduğunda katılın 👉 @{SUPPORT_GROUP}\nya da help butonuna basınız  /help """
         START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="𝐔𝐩𝐝𝐚𝐭𝐞𝐬 💫", url=f"https://t.me/HeroOfficialBots"),
-                    InlineKeyboardButton(text="𝐀𝐝𝐝 𝐌𝐞 ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
+                    InlineKeyboardButton(text="Kanal 💫", url=f"https://t.me/SamilBots"),
+                    InlineKeyboardButton(text="Beni gruba ekle ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton(text="𝐃𝐞𝐯 ✨", url="https://t.me/Shailendra34"),
+                    InlineKeyboardButton(text="Sahibim ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton(text="Sohbet Grubu ✨", url="https://t.me/Sohbetimalfa"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 📒", callback_data="help_"),
+                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),
                 ],
                 
             ]
@@ -100,15 +100,15 @@ def callback_query(Client, callback: CallbackQuery):
         B_HELP = """
 `ʙᴀsɪᴄ ᴄᴏᴍᴍᴀɴᴅs :- `
 
-/play (query, ytlink, audio file) - use this command and enjoy music
-/ytp (query) - Use it for better search music!!
-/song (query) - Download your favourite songs using this command!
-/search (query) - This command will give you youtube search of your query!
+/oynat (Sorgu, yt linki, ses dosyası ) - bu komutu kullanın ve müziğin keyfine bakın 
+/ytp (sorgu) - Daha gelişmiş muzik aramak için kullanın 
+/bul (Sorgu) - Bu komutla sevdiginiz şarkıları indirebilirsiniz 
+/ara (sorgu) - YouTube de arama yapar 
 """
         BUTTON = [
             [
-                InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),
-                InlineKeyboardButton(text="⬅️ ʙᴀᴄᴋ", callback_data="help_"),
+                InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+                InlineKeyboardButton(text="⬅️ Geri", callback_data="help_"),
             ],
         ]
         callback.edit_message_text(
@@ -117,26 +117,26 @@ def callback_query(Client, callback: CallbackQuery):
         )
     elif callback.data == "admin_cmd":
         A_HELP = """
-`ᴀᴅᴍɪɴs ᴄᴏᴍᴍᴀɴᴅs :-`
+`Admin komutlar :-`
 
-/pause - To pause the song!
-/resume - Resume paused song!
-/skip - skip to the next song!
-/end - End the stream!
-/join - To invite assistant in your group!
+/durdur - Çalan müziği durdurur
+/devam - duran müziği devam ettirir
+/atla - sıradaki şarkıya geçer 
+/son - şarkıyı sonlandırır
+/katil - asistanı gruba ekler
 
 
-`sᴜᴅᴏ ᴄᴏᴍᴍᴀɴᴅ :-`
+`Sudo komutlar :-`
 
-/rmf - To clean Download file from database
-/rmw - To clean raw files from database
-/clean - To clean files from server
-/gcast - To globel casting a msg
+/rmf - Dosyayı veri tabanından temizler 
+/rmw - Veri tabanınından ham dosyaları temizler
+/clean - Dosyaları sunucudan temizler
+/gcast - küresel mesaj yayınlamak için 
 """
         BUTTON = [
             [
-                InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close_"),
-                InlineKeyboardButton(text="⬅️ ʙᴀᴄᴋ", callback_data="help_"),
+                InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),
+                InlineKeyboardButton(text="⬅️ Geri", callback_data="help_"),
             ],
         ]
         callback.edit_message_text(

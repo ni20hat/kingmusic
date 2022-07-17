@@ -13,7 +13,7 @@ from callsmusic.callsmusic import client as user
 STR_ID = "CAACAgIAAx0CW9EqKAACEoZiT-Pqtg1RKtr06xxZWMwSAhye2AACghsAAiKAeEqwv4PkzvkmQiME"
 
 @Client.on_message(
-    command(["join", "joinassistant", "userbotjoin"]) & ~filters.bot
+    command(["join", "katil", "joinassistant", "userbotjoin"]) & ~filters.bot
 )
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
@@ -27,7 +27,7 @@ async def join_chat(c: Client, m: Message):
             (await user.get_me()).id,
             can_manage_voice_chats=True
         )
-        return await user.send_message(chat_id, "ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ ᴛʜɪs ɢʀᴏᴜᴘ ɴᴏᴡ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ 💫")
+        return await user.send_message(chat_id, "Asistan gruba katıldı müziğin keyfini çıkarın 💫")
     except UserAlreadyParticipant:
         admin = await m.chat.get_member((await user.get_me()).id)
         if not admin.can_manage_voice_chats:
@@ -35,5 +35,5 @@ async def join_chat(c: Client, m: Message):
                 (await user.get_me()).id,
                 can_manage_voice_chats=True
             )
-            return await user.send_message(chat_id, "🙄 ᴀssɪsᴛᴀɴᴛ ɪᴢ sᴛɪʟʟ ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ")
-        return await user.send_message(chat_id, "🙄 ᴀssɪsᴛᴀɴᴛ ɪᴢ sᴛɪʟʟ ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ")
+            return await user.send_message(chat_id, "Asistan zaten grupta")
+        return await user.send_message(chat_id, "Asistan zaten grupta")

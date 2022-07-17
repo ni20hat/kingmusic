@@ -19,22 +19,22 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             ReplyKeyboardMarkup, ReplyKeyboardRemove)
 
 
-PAUSED = "https://telegra.ph/file/94ee2bdfc7e81d371aae3.jpg"
-RESUMED = "https://telegra.ph/file/50cf13056d78898e13ae0.jpg"
-SKIPPED = "https://telegra.ph/file/116d7d9b9100c44249333.jpg"
-END = "https://telegra.ph/file/6d1902d08c88f318d53c7.jpg"
+PAUSED = "https://telegra.ph/file/e1baf2c6dde1534acb45f.jpg"
+RESUMED = "https://telegra.ph/file/6d861ec0c75efe088d043.jpg"
+SKIPPED = "https://telegra.ph/file/ec4cb3823e85bd9bb6022.jpg"
+END = "https://telegra.ph/file/30525f90e119bf95d9d80.jpg"
 
 BUTTON = [
     [
-        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/HeroOfficialBots"),
-        InlineKeyboardButton(text="🗑️Close", callback_data="close_"),
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/Yaaro_ki_yaarii"), 
+        InlineKeyboardButton(text="Sohbet", url=f"https://t.me/Sohbetimalfa"),
+        InlineKeyboardButton(text="🗑️kapat", callback_data="close_"),
+        InlineKeyboardButton(text="Sahibim", url=f"https://t.me/Samilben"), 
     ],
 ]
 
 ACTV_CALLS = []
 
-@Client.on_message(commandpro(["/pause", "!pause", "pause"]) & other_filters)
+@Client.on_message(commandpro(["/pause", "!pause", "durdur", "pause"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -42,13 +42,13 @@ async def pause(_, message: Message):
     
     await message.reply_photo(
         photo=PAUSED,
-        caption=f"sᴛʀᴇᴀᴍ ᴘᴀᴜsᴇᴅ ʙʏ {message.from_user.mention} 🥀\n\n✦ /resume :- ʀᴇsᴜᴍᴇ ᴘᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ",
+        caption=f"Müzik durduruldu durduran {message.from_user.mention} 🥀\n\n✦ /resume :- müziği devam ettir",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
 
 
-@Client.on_message(commandpro(["/resume", "!resume", "resume"]) & other_filters)
+@Client.on_message(commandpro(["/resume", "!resume", "devam", "resume"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -56,20 +56,20 @@ async def resume(_, message: Message):
     
     await message.reply_photo(
         photo=RESUMED,
-        caption=f"ʀᴇsᴜᴍᴇᴅ ᴘᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ ʙʏ {message.from_user.mention} 💫.\n\n✦ /pause :- ᴘᴀᴜsᴇ ᴘʟᴀʏʙᴀᴄᴋ!!",
+        caption=f"müzik devam ediyor sen {message.from_user.mention} 💫.\n\n✦ /pause :- şarkıyı duraklat!!",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
 
 
-@Client.on_message(commandpro(["/end", "!end", "/stop", "!stop", "stop", "end"]) & other_filters)
+@Client.on_message(commandpro(["/end", "!end", "/stop", "!stop", "son", "stop", "end"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
     chut_id = message.chat.id
     if int(chut_id) not in ACTV_CALLS:
         await message.reply_text(
-            "ᴡᴛғ, ᴘʟᴀʏ ᴛʜᴇ sᴏɴɢ ғɪʀsᴛ ɪɴ ᴏʀᴅᴇʀ ᴛᴏ sᴋɪᴘ ᴛʜᴀᴛ 💫",
+            "Atlamam için şarkı çalmam gerekiyor  💫",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
@@ -83,13 +83,13 @@ async def stop(_, message: Message):
     
         await message.reply_photo(
             photo=END,
-            caption=f"sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ ʙʏ {message.from_user.mention} \n ɴᴏᴡ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙʏᴇ ʙʏᴇ 👋🏻",
+            caption=f"Akış sona erdi sonlandıran{message.from_user.mention} \n Sesli sohbetten ayrılıyorum güle güle  👋🏻",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
     
 
-@Client.on_message(commandpro(["/skip", "!skip", "skip"]) & other_filters)
+@Client.on_message(commandpro(["/skip", "!skip", "atla", "skip"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
@@ -100,7 +100,7 @@ async def skip(_, message: Message):
     if int(chat_id) not in ACTV_CALLS:
         
         await message.reply_text(
-            "ᴡᴛғ, ᴘʟᴀʏ ᴛʜᴇ sᴏɴɢ ғɪʀsᴛ ɪɴ ᴏʀᴅᴇʀ ᴛᴏ sᴋɪᴘ ᴛʜᴀᴛ 🙄",
+            "Atlamam için şarkı çalmam gerekiyor  💫",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
@@ -121,7 +121,7 @@ async def skip(_, message: Message):
     
     await message.reply_photo(
         photo=SKIPPED,
-        caption=f"ᴍᴏᴠᴇᴅ ᴛᴏ ᴛʜᴇ ɴᴇxᴛ sᴏɴɢ\nsᴛʀᴇᴀᴍ sᴋɪᴘᴘᴇᴅ ʙʏ {message.from_user.mention}🥀",
+        caption=f"Sıradaki şarkıya geçildi \nŞarkı atlatıldı atlayan kişi{message.from_user.mention}🌟",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()

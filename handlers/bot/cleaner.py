@@ -20,9 +20,9 @@ async def clear_downloads(_, message: Message):
     if ls_dir:
         for file in os.listdir(downloads):
             os.remove(os.path.join(downloads, file))
-        await message.reply_text("`🗑️ʀᴇᴍᴏᴠᴇᴅ ᴀʟʟ ғɪʟᴇs ғʀᴏᴍ ᴅᴏᴡɴʟᴏᴀᴅ`")
+        await message.reply_text("`🗑️İndirilen tüm dosyalar kaldırıldı `")
     else:
-        await message.reply_text("`sʜʜ, ɴᴛɢ ɪs ғᴏᴜɴᴅ ᴛᴏ ᴄʟᴇᴀɴ🙄`")
+        await message.reply_text("`Temizlenecek dosya bulundu`")
 
         
 @Client.on_message(command("rmw") & ~filters.edited)
@@ -33,9 +33,9 @@ async def clear_raw(_, message: Message):
     if ls_dir:
         for file in os.listdir(raw_files):
             os.remove(os.path.join(raw_files, file))
-        await message.reply_text("`ᴄʟᴇᴀɴɪɴɢ sɪʟᴇɴᴛ ᴅʙ🗑️`")
+        await message.reply_text("`temizlik ayarlanıyor 🗑️`")
     else:
-        await message.reply_text("`ᴀʟʀᴇᴀᴅʏ ᴄʟᴇᴀɴᴇᴅ🙋‍♀️`")
+        await message.reply_text("`Dosyalar hazır`")
 
 
 @Client.on_message(commandpro(["Cl", "/clean", "!clean", "clean"]) & ~filters.edited)
@@ -49,4 +49,4 @@ async def cleanup(_, message: Message):
             os.system("rm -rf *.webm *.jpg")
         await message.reply_text("`✅ ᴄʟᴇᴀɴᴇᴅ`")
     else:
-        await message.reply_text("`✅ ᴀʟʀᴇᴀᴅʏ ᴄʟᴇᴀɴᴇᴅ`")
+        await message.reply_text("`✅ Temizlik başarılı`")
