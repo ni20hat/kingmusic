@@ -1,3 +1,8 @@
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Merhaba+beni+Takip+eder-misin!)
+</p></p>
+
+
+
 
 ## DEPLOY ON HEROKU 🚀
 
