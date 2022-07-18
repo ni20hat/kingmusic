@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 
 
-@Client.on_message(filters.command("start"))
+@bot.on_message(filters.command("start"))
 def start_(bot, message):
     
     START_TEXT = """⭐⭐Merhaba {}\n\nben {} \nbasit bir müzik botuyum\nbu botla herhangi bir sorun olduğunda Sahibim ile iletişime geçiniz kendisi bu grupta vardır @{}\nDaha fazla yardım için  /help ⭐⭐"""
