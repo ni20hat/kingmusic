@@ -1,5 +1,5 @@
 git+https://github.com/adityacheats/downloader@master
-pyrogram==1.4.16
+pyrogram==0.8.6
 TgCrypto
 py-tgcalls
 python-dotenv
@@ -14,4 +14,3 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
-Pytgcalls==0.8.6
