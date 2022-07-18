@@ -179,7 +179,7 @@ async def play(_, message: Message):
                             url=f"https://t.me/Samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 Kapat", callback_data=f"close"),                   
                ],
             ]
         )
