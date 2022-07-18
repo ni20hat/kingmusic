@@ -48,7 +48,7 @@ async def pause(_, message: Message):
     await message.delete()
 
 
-@Client.on_message(commandpro(["/resume", "!resume", "devam", "/resime", "resume"]) & other_filters)
+@Client.on_message(commandpro(["/resume", "!resume", "devam", "/devam", "resume"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
