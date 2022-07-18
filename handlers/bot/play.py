@@ -95,7 +95,7 @@ def close(Client, callback: CallbackQuery):
         callback.message.delete()
 
 @Client.on_message(
-    commandpro(["/ytp", "oynat", "!ytp", "ytp", "/play", "!play", "/p", "oynat", "play"])
+    commandpro(["/ytp", "/oynat", "!ytp", "ytp", "/play", "!play", "/p", "oynat", "play"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -179,7 +179,7 @@ async def play(_, message: Message):
                             url=f"https://t.me/Samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 Kapat", callback_data=f"close"),                   
+                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),                   
                ],
             ]
         )
@@ -223,7 +223,7 @@ async def play(_, message: Message):
                             url=f"https://t.me/samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 kapat", callback_data="close"),                   
                ],
             ]
         )
@@ -244,7 +244,7 @@ async def play(_, message: Message):
                             url=f"https://t.me/Samilben"),
                ],
                [
-                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),                   
+                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),                   
                ],
             ]
         )
