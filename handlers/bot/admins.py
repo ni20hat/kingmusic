@@ -27,7 +27,7 @@ END = "https://telegra.ph/file/30525f90e119bf95d9d80.jpg"
 BUTTON = [
     [
         InlineKeyboardButton(text="Sohbet", url=f"https://t.me/Sohbetimalfa"),
-        InlineKeyboardButton(text="🗑️kapat", callback_data="close_"),
+        InlineKeyboardButton(text="🗑️kapat", callback_data="close"),
         InlineKeyboardButton(text="Sahibim", url=f"https://t.me/Samilben"), 
     ],
 ]
@@ -69,7 +69,7 @@ async def stop(_, message: Message):
     chut_id = message.chat.id
     if int(chut_id) not in ACTV_CALLS:
         await message.reply_text(
-            "Atlamam için şarkı çalmam gerekiyor  💫",
+            "Şu an şarkı çalmıyor   💫",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
@@ -83,7 +83,7 @@ async def stop(_, message: Message):
     
         await message.reply_photo(
             photo=END,
-            caption=f"Akış sona erdi sonlandıran{message.from_user.mention} \n Sesli sohbetten ayrılıyorum güle güle  👋🏻",
+            caption=f"Akış sona erdi iyi günler 🙃 {message.from_user.mention} \n Sesli sohbetten ayrılıyorum güle güle  👋🏻",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
@@ -121,7 +121,7 @@ async def skip(_, message: Message):
     
     await message.reply_photo(
         photo=SKIPPED,
-        caption=f"Sıradaki şarkıya geçildi \nŞarkı atlatıldı atlayan kişi{message.from_user.mention}🌟",
+        caption=f"Sıradaki şarkıya geçildi \nŞarkı atlatıldı{message.from_user.mention}🌟",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
