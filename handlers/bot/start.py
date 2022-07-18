@@ -24,7 +24,7 @@ def start_(bot, message):
                     InlineKeyboardButton(text="sohbet grubu ✨", url="https://t.me/Sohbetimalfa"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help"),
+                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),
                 ],
                 
             ]
@@ -40,11 +40,11 @@ def help_(bot, message):
     
     HELP_BUTTON = [
         [
-            InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic"),
+            InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic_"),
             InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin_cmd"),
         ],
         [
-            InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),
+            InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
             InlineKeyboardButton(text="⬅️ Geri", callback_data="HOME"),
         ],
     ]
@@ -53,22 +53,20 @@ def help_(bot, message):
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
     message.delete()
-@bot.on_callback_query() 
 
+@bot.on_callback_query()
 def callback_query(Client, callback: CallbackQuery):
-
-    print(callback, flush=True)
-    if callback.data == "help":
+    if callback.data == "help_":
     
         HELP_TXT = f"""Merhaba işte yardım menüsü istediğiniz seçeneğinizi seçin ve keşfedin \nHer türlü yardım veya sorun için katılın @{SUPPORT_GROUP} Sorununuz nedir 💫?"""
     
         HELP_BUTTON = [
             [
-                InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic"),
+                InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic_"),
                 InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin_cmd"),
             ],
             [
-                InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),
+                InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
                 InlineKeyboardButton(text="⬅️ Geri", callback_data="HOME"),
             ],
         ]
@@ -89,7 +87,7 @@ def callback_query(Client, callback: CallbackQuery):
                     InlineKeyboardButton(text="Sohbet Grubu ✨", url="https://t.me/Sohbetimalfa"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help"),
+                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),
                 ],
                 
             ]
@@ -98,7 +96,7 @@ def callback_query(Client, callback: CallbackQuery):
             START_TEXT,
             reply_markup=InlineKeyboardMarkup(START_BUTTON)
         )
-    elif callback.data == "basic":
+    elif callback.data == "basic_":
         B_HELP = """
 `ʙᴀsɪᴄ ᴄᴏᴍᴍᴀɴᴅs :- `
 
@@ -109,8 +107,8 @@ def callback_query(Client, callback: CallbackQuery):
 """
         BUTTON = [
             [
-                InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),
-                InlineKeyboardButton(text="⬅️ Geri", callback_data="help"),
+                InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+                InlineKeyboardButton(text="⬅️ Geri", callback_data="help_"),
             ],
         ]
         callback.edit_message_text(
@@ -137,13 +135,13 @@ def callback_query(Client, callback: CallbackQuery):
 """
         BUTTON = [
             [
-                InlineKeyboardButton(text="🗑 kapat", callback_data="close"),
-                InlineKeyboardButton(text="⬅️ Geri", callback_data="help"),
+                InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),
+                InlineKeyboardButton(text="⬅️ Geri", callback_data="help_"),
             ],
         ]
         callback.edit_message_text(
             A_HELP,
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
-    elif callback.data == "close":
+    elif callback.data == "close_":
         callback.message.delete()
