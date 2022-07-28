@@ -38,7 +38,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("`Dosyalar hazır`")
 
 
-@Client.on_message(commandpro(["Cl", "/clean", "!clean", "clean"]) & ~filters.edited)
+@Client.on_message(commandpro(["/clean"]) & ~filters.edited)
 @errors
 @sudo_users_only
 async def cleanup(_, message: Message):
