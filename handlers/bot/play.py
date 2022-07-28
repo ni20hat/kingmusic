@@ -95,7 +95,7 @@ def close(Client, callback: CallbackQuery):
         callback.message.delete()
 
 @Client.on_message(
-    commandpro(["/ytp", "/oynat", "!ytp", "ytp", "/play", "!play", "/p", "oynat", "play"])
+    commandpro(["/oynat", "/play", "oynat", "play"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -115,7 +115,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "OxygenMusic"
+        user.first_name = "Mp3 Muzik"
     usar = user
     wew = usar.id
     try:
@@ -172,14 +172,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="Sohbet 💫",
-                            url=f"https://t.me/Sohbetimalfa"),
+                            text="📝 Destek",
+                            url=f"https://t.me/Starbotdestek"),
                     InlineKeyboardButton(
-                            text="Sahibim ⭐",
-                            url=f"https://t.me/Samilben"),
-               ],
-               [
-                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),                   
+                            text="📍 Kanal",
+                            url=f"https://t.me/StarBotKanal"),                   
                ],
             ]
         )
@@ -216,14 +213,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="Sohbet 💫",
-                            url=f"https://t.me/Sohbetimalfa"),
+                            text="📝 Destek",
+                            url=f"https://t.me/Starbotdestek"),
                     InlineKeyboardButton(
-                            text="Sahibim ⭐",
-                            url=f"https://t.me/samilben"),
-               ],
-               [
-                   InlineKeyboardButton(text="🗑 kapat", callback_data="close"),                   
+                            text="📍 Kanal",
+                            url=f"https://t.me/StarBotKanal"),                   
                ],
             ]
         )
@@ -237,14 +231,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="Sohbet 💫",
-                            url=f"https://t.me/Sohbetimalfa"),
+                            text="📝 Destek",
+                            url=f"https://t.me/Starbotdestek"),
                     InlineKeyboardButton(
-                            text="Sahibim ⭐",
-                            url=f"https://t.me/Samilben"),
-               ],
-               [
-                   InlineKeyboardButton(text="🗑 Kapat", callback_data="close"),                   
+                            text="📍 Kanal",
+                            url=f"https://t.me/StarBotKanal"),                   
                ],
             ]
         )
@@ -296,14 +287,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="sohbet 💫",
-                            url=f"https://t.me/Sohbetimalfa"),
+                            text="📝 Destek",
+                            url=f"https://t.me/Starbotdestek"),
                     InlineKeyboardButton(
-                            text="sahibim ⭐",
-                            url=f"https://t.me/Samilben"),
-               ],
-               [
-                   InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),                   
+                            text="📍 Kanal",
+                            url=f"https://t.me/StarBotKanal"),                   
                ],
             ]
         )
@@ -324,7 +312,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)      
         await message.reply_photo(
             photo="final.png",
-            caption="****Şarkınız sıraya eklendi \n\nİsteyen: {} \nDurum :-** {}**".format(usrid, position),
+            caption="**Şarkınız sıraya eklendi .**".format(usrid, position),
             reply_markup=keyboard,
         )
         await message.delete()
@@ -343,7 +331,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**Şimdi sıradaki şarkıya geçiyorum ️.\n\nOynatılıyor 💫 :- `{}`...**\nİsteyen: {}".format(
+            caption="**Şimdi sıradaki şarkıya geçiyorum ️ .**".format(
         message.chat.title, usrid
         ), )
         
