@@ -16,15 +16,14 @@ def start_(bot, message):
 
     START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="kanal 💫", url=f"https://t.me/SamilBots"),
-                    InlineKeyboardButton(text="Beni gruba ekleyin➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
+                    InlineKeyboardButton(text="➕ Beni Gruba Ekleyin ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="Sahibim ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton(text="sohbet grubu ✨", url="https://t.me/Sohbetimalfa"),
+                    InlineKeyboardButton(text="📝 Destek ", url=f"https://t.me/Starbotdestek"),
+                    InlineKeyboardButton(text="📍 Kanal ", url="https://t.me/StarBotKanal"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),
+                    InlineKeyboardButton(text="🕹️ Komutlar 🕹️", url="https://t.me/StarBotKanal"),
                 ],
                 
             ]
@@ -34,7 +33,7 @@ def start_(bot, message):
     )
     message.delete()
 
-@bot.on_message(filters.command("help"))
+@bot.on_message(filters.command("hsusueue"))
 def help_(bot, message):
     HELP_TXT = """Merhaba {}\nişte yardım menüsü \nGrubuna ekleyerek müzik keyfine başlayabilirsiniz @{} sorununuz nedir? 💫"""
     
@@ -62,8 +61,8 @@ def callback_query(Client, callback: CallbackQuery):
     
         HELP_BUTTON = [
             [
-                InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic_"),
-                InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin_cmd"),
+                InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="bcd"),
+                InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin"),
             ],
             [
                 InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
@@ -96,7 +95,7 @@ def callback_query(Client, callback: CallbackQuery):
             START_TEXT,
             reply_markup=InlineKeyboardMarkup(START_BUTTON)
         )
-    elif callback.data == "basic_":
+    elif callback.data == "bcd":
         B_HELP = """
 `ʙᴀsɪᴄ ᴄᴏᴍᴍᴀɴᴅs :- `
 
@@ -115,7 +114,7 @@ def callback_query(Client, callback: CallbackQuery):
             B_HELP,
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
-    elif callback.data == "admin_cmd":
+    elif callback.data == "admin":
         A_HELP = """
 `Admin komutlar :-`
 
