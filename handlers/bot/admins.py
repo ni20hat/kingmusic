@@ -26,15 +26,14 @@ END = "https://telegra.ph/file/30525f90e119bf95d9d80.jpg"
 
 BUTTON = [
     [
-        InlineKeyboardButton(text="Sohbet", url=f"https://t.me/Sohbetimalfa"),
-        InlineKeyboardButton(text="🗑️kapat", callback_data="close"),
-        InlineKeyboardButton(text="Sahibim", url=f"https://t.me/Samilben"), 
+        InlineKeyboardButton(text="📝 Destek", url=f"https://t.me/Starbotdestek"),
+        InlineKeyboardButton(text="📍Kanal", url=f"https://t.me/StarBotKanal"), 
     ],
 ]
 
 ACTV_CALLS = []
 
-@Client.on_message(commandpro(["/pause", "!pause", "durdur", "/durdur", "pause"]) & other_filters)
+@Client.on_message(commandpro(["/pause", "/durdur"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -42,13 +41,13 @@ async def pause(_, message: Message):
     
     await message.reply_photo(
         photo=PAUSED,
-        caption=f"Müzik durduruldu durduran {message.from_user.mention} 🥀\n\n✦ /devam :- müziği devam ettir",
+        caption=f"Müzik durduruldu !\n\n✦ /devam :- müziği devam ettir",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
 
 
-@Client.on_message(commandpro(["/resume", "!resume", "devam", "/devam", "resume"]) & other_filters)
+@Client.on_message(commandpro(["/resume", "/devam"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -56,13 +55,13 @@ async def resume(_, message: Message):
     
     await message.reply_photo(
         photo=RESUMED,
-        caption=f"müzik devam ediyor {message.from_user.mention} 💫.\n\n✦ /durdur :- şarkıyı duraklat!!",
+        caption=f"müzik devam ediyor !.\n\n✦ /durdur :- şarkıyı duraklat!!",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
 
 
-@Client.on_message(commandpro(["/end", "!end", "/stop", "!stop", "/son", "son", "stop", "end"]) & other_filters)
+@Client.on_message(commandpro(["/end", "/son"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -83,13 +82,13 @@ async def stop(_, message: Message):
     
         await message.reply_photo(
             photo=END,
-            caption=f"Akış sona erdi iyi günler 🙃 {message.from_user.mention} \n Sesli sohbetten ayrılıyorum güle güle  👋🏻",
+            caption=f"Akış sona erdi iyi günler ! \n\n Sesli sohbetten ayrılıyorum güle güle  👋🏻",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
     
 
-@Client.on_message(commandpro(["/skip", "!skip", "atla", "/atla", "skip"]) & other_filters)
+@Client.on_message(commandpro(["/skip", "/atla"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
@@ -121,7 +120,7 @@ async def skip(_, message: Message):
     
     await message.reply_photo(
         photo=SKIPPED,
-        caption=f"Sıradaki şarkıya geçildi \nŞarkı atlatıldı{message.from_user.mention}🌟",
+        caption=f"Sıradaki şarkıya geçildi ✓",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
