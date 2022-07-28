@@ -23,7 +23,7 @@ def start_(bot, message):
                     InlineKeyboardButton(text="📍 Kanal ", url="https://t.me/StarBotKanal"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="🕹️ Komutlar 🕹️", url="https://t.me/StarBotKanal"),
+                    InlineKeyboardButton(text="🕹️ Komutlar 🕹️", url="https://t.me/Mp3MuzikNews"),
                 ],
                 
             ]
