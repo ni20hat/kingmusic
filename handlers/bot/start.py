@@ -12,7 +12,7 @@ from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
     
-    START_TEXT = """⭐⭐Merhaba {}\n\nben {} \nbasit bir müzik botuyum\nbu botla herhangi bir sorun olduğunda Sahibim ile iletişime geçiniz kendisi bu grupta vardır @{}\nDaha fazla yardım için  /help ⭐⭐"""
+    START_TEXT = """**⭐ Merhaba {}\n\n▫️Ben basit bir müzik botuyum .\n\n▫️Beni Grubunuza ekleyip yönetici yapın ve müziğin keyfin çıkarın !**"""
 
     START_BUTTON = [
                 [
