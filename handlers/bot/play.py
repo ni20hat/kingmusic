@@ -298,7 +298,7 @@ async def play(_, message: Message):
     
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**istenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlara izin verilmiyor ❌**"
+                f"**İstenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlara izin verilmiyor ❌**"
             )
             return
         requested_by = message.from_user.first_name
@@ -312,7 +312,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)      
         await message.reply_photo(
             photo="final.png",
-            caption="**Şarkınız sıraya eklendi .**n\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {} \nᴘᴏsɪᴛɪᴏɴ :-** {}**".format(usrid, position),
+            caption="**Şarkınız sıraya eklendi .**\n\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {} \nᴘᴏsɪᴛɪᴏɴ :- {}".format(usrid, position),
             reply_markup=keyboard,
         )
         await message.delete()
@@ -331,7 +331,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**Parça Oynatılıyor ️ .**\n\nᴘʟᴀʏɪɴɢ ᴀᴛ‍ 💫 :- `{}`...\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {}"".format(
+            caption="**Parça Oynatılıyor ️ .**\n\nᴘʟᴀʏɪɴɢ ᴀᴛ‍ 💫 :- `{}`...\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {}".format(
         message.chat.title, usrid
         ), )
         
