@@ -331,7 +331,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ **Parça Oynatılıyor ️ . . .**\n\nᴛᴀʟᴇᴘ ᴇᴅᴇɴ : {}".format(
+            caption="▶️ **Parça Oynatılıyor ️ . . .**\n\nɢʀᴜʙ : {}\n\nᴛᴀʟᴇᴘ ᴇᴅᴇɴ : {}".format(
         message.chat.title, usrid
         ), )
         
