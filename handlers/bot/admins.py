@@ -117,3 +117,50 @@ async def skip(_, message: Message):
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
+
+@Client.on_message(command("auth") & other_filters)
+@authorized_users_only
+async def authenticate(client, message):
+    global admins
+    if not message.reply_to_message:
+        await message.reply("**•> Kullanıcı Mesajini Yanıtlayın **!")
+        return
+    if message.reply_to_message.from_user.id not in admins[message.chat.id]:
+        new_admins = admins[message.chat.id]
+        new_admins.append(message.reply_to_message.from_user.id)
+        admins[message.chat.id] = new_admins
+        await message.reply("•> **Kullanıcı Yetkili** .")
+    else:
+        await message.reply("✔ **Kullanıcı Zaten Yetkili **!")
+
+
+@Client.on_message(command("unauth") & other_filters)
+@authorized_users_only
+async def deautenticate(client, message):
+    global admins
+    if not message.reply_to_message:
+        await message.reply("•> **Kullanıcı Mesajini Yanıtlayın** !")
+        return
+    if message.reply_to_message.from_user.id in admins[message.chat.id]:
+        new_admins = admins[message.chat.id]
+        new_admins.remove(message.reply_to_message.from_user.id)
+        admins[message.chat.id] = new_admins
+        await message.reply("kullanıcı yetkisiz")
+    else:
+        await message.reply("•> **Kullanıcının Yetkisi Alındı** !")
+
+
+@Client.on_message(command("reload") & other_filters)
+@errors
+@authorized_users_only
+async def update_admin(client, message):
+    global admins
+    new_admins = []
+    new_ads = await client.get_chat_members(message.chat.id, filter="administrators")
+    for u in new_ads:
+        new_admins.append(u.user.id)
+    admins[message.chat.id] = new_admins
+    await client.send_message(
+        message.chat.id,
+        "✅ **Bot yeniden başladı!**\n✅ **Admin listesi güncellendi!**"
+    )
