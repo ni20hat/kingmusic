@@ -95,7 +95,7 @@ def close(Client, callback: CallbackQuery):
         callback.message.delete()
 
 @Client.on_message(
-    commandpro(["/oynat", "/play", "/oynat{BOT_USERNAME}", "\play{BOT_USERNAME}"])
+    commandpro(["/oynat", "/play"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
