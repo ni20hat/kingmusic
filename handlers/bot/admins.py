@@ -150,7 +150,7 @@ async def deautenticate(client, message):
         await message.reply("•> **Kullanıcının Yetkisi Alındı** !")
 
 
-@Client.on_message(commandpro("/reload", "/reload{BOT_USERNAME}") & other_filters)
+@Client.on_message(commandpro("/reload") & other_filters)
 @errors
 @authorized_users_only
 async def update_admin(client, message):
