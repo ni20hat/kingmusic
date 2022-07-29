@@ -61,7 +61,7 @@ async def resume(_, message: Message):
     await message.delete()
 
 
-@Client.on_message(commandpro(["son", "end"]) & other_filters)
+@Client.on_message(commandpro(["/son", "/end", "/son{BOT_USERNAME}", "/end{BOT_USERNAME}"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
