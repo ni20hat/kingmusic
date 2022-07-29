@@ -1,39 +1,53 @@
-# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @SHAILENDRA34 |
-# 𝐃𝐞𝐚𝐫 𝐏𝐞𝐫𝐨 𝐩𝐩𝐥𝐬 𝐏𝐥𝐢𝐬𝐡 𝐃𝐨𝐧'𝐭 𝐫𝐞𝐦𝐨𝐯𝐞 𝐭𝐡𝐢𝐬 𝐥𝐢𝐧𝐞 𝐟𝐫𝐨𝐦 𝐡𝐞𝐫𝐞 🌚
-
-
-import asyncio
-from pyrogram.types import Message
+from callsmusic.callsmusic import client as USER
 from pyrogram import Client, filters
-from helpers.filters import command, other_filters
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserAlreadyParticipant
-from helpers.decorators import authorized_users_only
-from callsmusic.callsmusic import client as user
+from helpers.decorators import errors, authorized_users_only
 
-STR_ID = "CAACAgIAAx0CW9EqKAACEoZiT-Pqtg1RKtr06xxZWMwSAhye2AACghsAAiKAeEqwv4PkzvkmQiME"
-
-@Client.on_message(
-    command(["/katil", "katil"]) & ~filters.bot
-)
+@Client.on_message(filters.group & filters.command(["katil", "asistan"]))
 @authorized_users_only
-async def join_chat(c: Client, m: Message):
-    chat_id = m.chat.id
+@errors
+async def addchannel(client, message):
+    chid = message.chat.id
     try:
-        invite_link = await m.chat.export_invite_link()
-        if "+" in invite_link:
-            link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
-            await user.join_chat(f"https://t.me/joinchat/{link_hash}")
-        await m.chat.promote_member(
-            (await user.get_me()).id,
-            can_manage_voice_chats=True
+        invitelink = await client.export_chat_invite_link(chid)
+    except:
+        await message.reply_text(
+            "<b>Beni Önce Yönetici Yapmalısın</b>",
         )
-        return await user.send_message(chat_id, "Asistan gruba katıldı müziğin keyfini çıkarın 💫")
+        return
+
+    try:
+        user = await USER.get_me()
+    except:
+        user.first_name =  "Sesmusic Asistan"
+
+    try:
+        await USER.join_chat(invitelink)
+        await USER.send_message(message.chat.id,"•> **Senin İsteğin Üzerine Geldim** !")
     except UserAlreadyParticipant:
-        admin = await m.chat.get_member((await user.get_me()).id)
-        if not admin.can_manage_voice_chats:
-            await m.chat.promote_member(
-                (await user.get_me()).id,
-                can_manage_voice_chats=True
-            )
-            return await user.send_message(chat_id, "Asistan zaten grupta")
-        return await user.send_message(chat_id, "Asistan zaten grupta")
+        await message.reply_text(
+            "<b>Asistan Zaten Grupta Var</b>",
+        )
+        pass
+    except Exception as e:
+        print(e)
+        await message.reply_text(
+            f"<b>🔵 Hata 🔵\n User {user.first_name} userbot için yoğun katılma istekleri nedeniyle grubunuza katılamadı! Asistanın grupta yasaklanmadığından emin olun."
+            "\n\n Yada Asistan Hesabını Gruba Kendin Ekle </b>",
+        )
+        return
+    await message.reply_text(
+            "<b>Asistan Zaten Grupta Var</b>",
+        )
+    
+@USER.on_message(filters.group & filters.command(["ayril", "asistanby"]))
+async def rem(USER, message):
+    try:
+        await USER.leave_chat(message.chat.id)
+    except:  
+        await message.reply_text(
+            f"<b>Kullanıcı grubunuzdan ayrılamadı!."
+            "\n\nYada Kendin Çıkarabilirsin</b>",
+        )
+        return
