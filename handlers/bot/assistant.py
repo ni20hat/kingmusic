@@ -13,7 +13,7 @@ from callsmusic.callsmusic import client as user
 STR_ID = "CAACAgIAAx0CW9EqKAACEoZiT-Pqtg1RKtr06xxZWMwSAhye2AACghsAAiKAeEqwv4PkzvkmQiME"
 
 @Client.on_message(
-    command(["join", "katil"]) & ~filters.bot
+    command(["/katil", "katil"]) & ~filters.bot
 )
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
