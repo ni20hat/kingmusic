@@ -253,7 +253,7 @@ async def play(_, message: Message):
             return await lel.edit(
                 "Kullanım:-\n `/oynat` Şarkı adı, YouTube linki, Ses dosyası "
             )
-        await lel.edit("sorgunuz aranıyor 🌟🌟")
+        await lel.edit("▫️**Yükleniyor** 🌟")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
