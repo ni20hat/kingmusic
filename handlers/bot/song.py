@@ -26,7 +26,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply("▫️**Lütfen bekleyiniz arıyorum **🌟")
+    m = message.reply("▫️**Lütfen bekleyin **!")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -45,11 +45,11 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "▫️**Sorgunuz bulunamadı tekrar deneyin** 🌟"
+            "▫️**Sorgunuz bulunamadı** !"
         )
         print(str(e))
         return
-    m.edit("▫️**Sorgunuz sunucu tarafından yüklendi**")
+    m.edit("▫️**Sorgunuz yüklendi **!")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -63,7 +63,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit("**▫️indirme hatası tekrar deneyin **!")
+        m.edit("**▫️İndirme hatası tekrar deneyin **!")
         print(e)
 
     try:
