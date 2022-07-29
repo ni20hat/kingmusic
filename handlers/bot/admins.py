@@ -118,7 +118,7 @@ async def skip(_, message: Message):
     )
     await message.delete()
 
-@Client.on_message(command("auth") & other_filters)
+@Client.on_message(commandpro("/auth") & other_filters)
 @authorized_users_only
 async def authenticate(client, message):
     global admins
@@ -134,7 +134,7 @@ async def authenticate(client, message):
         await message.reply("✔ **Kullanıcı Zaten Yetkili **!")
 
 
-@Client.on_message(command("unauth") & other_filters)
+@Client.on_message(commandpro("/unauth") & other_filters)
 @authorized_users_only
 async def deautenticate(client, message):
     global admins
@@ -150,7 +150,7 @@ async def deautenticate(client, message):
         await message.reply("•> **Kullanıcının Yetkisi Alındı** !")
 
 
-@Client.on_message(command("reload") & other_filters)
+@Client.on_message(commandpro("/reload", "/reload{BOT_USERNAME}") & other_filters)
 @errors
 @authorized_users_only
 async def update_admin(client, message):
