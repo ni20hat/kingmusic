@@ -312,7 +312,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)      
         await message.reply_photo(
             photo="final.png",
-            caption="**Şarkınız sıraya eklendi .**\n\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {} \nᴘᴏsɪᴛɪᴏɴ :- {}".format(usrid, position),
+            caption="▶️ **Parça Sıraya eklendi .**\n\nᴛᴀʟᴇᴘ ᴇᴅᴇɴ: {} \n\nsᴀʀᴋɪ ʟɪsᴛᴇsɪ : {}".format(usrid, position),
             reply_markup=keyboard,
         )
         await message.delete()
@@ -331,7 +331,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**Parça Oynatılıyor ️ .**\n\nᴘʟᴀʏɪɴɢ ᴀᴛ‍ 💫 :- `{}`...\nʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {}".format(
+            caption="▶️ **Parça Oynatılıyor ️ . . .**\n\nᴛᴀʟᴇᴘ ᴇᴅᴇɴ : {}".format(
         message.chat.title, usrid
         ), )
         
