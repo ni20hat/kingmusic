@@ -33,7 +33,7 @@ BUTTON = [
 
 ACTV_CALLS = []
 
-@Client.on_message(commandpro(["/pause", "/durdur"]) & other_filters)
+@Client.on_message(commandpro(["/pause", "/durdur", "/pause{BOT_USERNAME}", "/durdur{BOT_USERNAME}"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -47,7 +47,7 @@ async def pause(_, message: Message):
     await message.delete()
 
 
-@Client.on_message(commandpro(["/resume", "/devam"]) & other_filters)
+@Client.on_message(commandpro(["/resume", "/devam", "/resume{BOT_USERNAME}", "/devam{BOT_USERNAME}"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -61,34 +61,27 @@ async def resume(_, message: Message):
     await message.delete()
 
 
-@Client.on_message(commandpro(["/end", "/son"]) & other_filters)
+@Client.on_message(command(["son", "end", "son{BOT_USERNAME}", "end{BOT_USERNAME}"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
-    chut_id = message.chat.id
-    if int(chut_id) not in ACTV_CALLS:
-        await message.reply_text(
-            "Şu an şarkı çalmıyor   💫",
-            reply_markup=InlineKeyboardMarkup(BUTTON)
-        )
-        await message.delete()
+    chat_id = message.chat.id 
+    for x in callsmusic.pytgcalls.active_calls:
+        ACTV_CALLS.append(int(x.chat_id))
+    if int(chat_id) not in ACTV_CALLS:
+        await message.reply_text("•> **Şu anda müzik çalmıyor**")
     else:
         try:
-            callsmusic.queues.clear(message.chat.id)
+            queues.clear(chat_id)
         except QueueEmpty:
             pass
-
-        await callsmusic.pytgcalls.leave_group_call(message.chat.id)
-    
-        await message.reply_photo(
-            photo=END,
-            caption=f"Akış sona erdi iyi günler ! \n\n Sesli sohbetten ayrılıyorum güle güle  👋🏻",
-            reply_markup=InlineKeyboardMarkup(BUTTON)
+        await callsmusic.pytgcalls.leave_group_call(chat_id)
+        await _.send_message(
+            message.chat.id,
+            "•> **Müzik durduruldu !**"
         )
-        await message.delete()
-    
 
-@Client.on_message(commandpro(["/skip", "/atla"]) & other_filters)
+@Client.on_message(commandpro(["/skip", "/atla", "/atla{BOT_USERNAME}", "/skip{BOT_USERNAME}"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
@@ -99,7 +92,7 @@ async def skip(_, message: Message):
     if int(chat_id) not in ACTV_CALLS:
         
         await message.reply_text(
-            "Atlamam için şarkı çalmam gerekiyor  💫",
+            "**Atlamam için şarkı çalmam gerekiyor !**",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
