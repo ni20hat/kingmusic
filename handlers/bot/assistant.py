@@ -33,8 +33,8 @@ async def addchannel(client, message):
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>🔵 Hata 🔵\n User {user.first_name} userbot için yoğun katılma istekleri nedeniyle grubunuza katılamadı! Asistanın grupta yasaklanmadığından emin olun."
-            "\n\n Yada Asistan Hesabını Gruba Kendin Ekle </b>",
+            f"<b>Asistan {user.first_name} için yoğun katılma istekleri nedeniyle grubunuza katılamadı! Asistanın grupta yasaklanmadığından emin olun."
+            "Veya Asistan Hesabını Gruba Kendin Ekle </b>",
         )
         return
     await message.reply_text(
