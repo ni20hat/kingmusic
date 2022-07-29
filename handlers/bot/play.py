@@ -251,7 +251,7 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "Kullanım:-\n `/oynat` Şarkı adı, YouTube linki, Ses dosyası "
+                "Kullanım:\n > `/oynat` ( Şarkı adı ) "
             )
         await lel.edit("▫️**Yükleniyor** 🌟")
         query = message.text.split(None, 1)[1]
