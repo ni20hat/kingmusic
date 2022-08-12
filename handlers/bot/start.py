@@ -12,18 +12,18 @@ from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
     
-    START_TEXT = """**⭐ Merhaba {}\n\n▫️Ben {} \n\n▫️Basit bir müzik botuyum .\n\n▫️Beni Grubunuza ekleyip yönetici yapın ve müziğin keyfini çıkarın !**"""
+    START_TEXT = """**⭐ Merhaba {}\n\n▫️Ben {} \n\n▫️Basit Bir Müzik Botuyum .\n\n▫️Beni Grubunuza ekleyip yönetici yapın ve müziğin keyfini çıkarın !**"""
 
     START_BUTTON = [
                 [
                     InlineKeyboardButton(text="🎉 Beni Gruba Ekleyin 🎉", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="📝 Destek ", url=f"https://t.me/Starbotdestek"),
-                    InlineKeyboardButton(text="🇹🇷 Kanal ", url="https://t.me/StarBotKanal"),
+                    InlineKeyboardButton(text="📝 Sahibim ", url=f"https://t.me/MacroPem"),
+                    InlineKeyboardButton(text="🇹🇷 Sohbet ", url="https://t.me/MajesteSohbetTr"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="📚 Tüm Komutlar ", url="https://t.me/Mp3MuzikNews"),
+                    InlineKeyboardButton(text="📚 Tüm Komutlar ", url="https://t.me/Sakin_Tiklama/5"),
                 ],
                 
             ]
@@ -78,12 +78,12 @@ def callback_query(Client, callback: CallbackQuery):
         START_TEXT = f"""Merhaba, ben {BOT_NAME} \nBasit ve gecikmesiz bir bottur\nHerhangi bir sorun olduğunda katılın 👉 @{SUPPORT_GROUP}\nya da help butonuna basınız  /help """
         START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="Kanal 💫", url=f"https://t.me/SamilBots"),
+                    InlineKeyboardButton(text="Sohbet 💫", url=f"https://t.me/MajesteSohbetTr"),
                     InlineKeyboardButton(text="Beni gruba ekle ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
                     InlineKeyboardButton(text="Sahibim ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton(text="Sohbet Grubu ✨", url="https://t.me/Sohbetimalfa"),
+                    InlineKeyboardButton(text="Sahibim ✨", url="https://t.me/Yorgun_Birisi"),
                 ],                
                 [                    
                     InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),

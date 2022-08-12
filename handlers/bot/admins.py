@@ -26,8 +26,8 @@ END = "https://telegra.ph/file/30525f90e119bf95d9d80.jpg"
 
 BUTTON = [
     [
-        InlineKeyboardButton(text="📝 Destek", url=f"https://t.me/Starbotdestek"),
-        InlineKeyboardButton(text="📍Kanal", url=f"https://t.me/StarBotKanal"), 
+        InlineKeyboardButton(text="📝 Destek", url=f"https://t.me/Sakin_Tiklama"),
+        InlineKeyboardButton(text="📍Sohbet", url=f"https://t.me/MajesteSohbetTr"), 
     ],
 ]
 
@@ -117,4 +117,5 @@ async def skip(_, message: Message):
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
+
 

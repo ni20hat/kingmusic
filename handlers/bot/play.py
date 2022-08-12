@@ -163,7 +163,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/754c32d3fe8dd9e5f4c08.jpg"
+        thumb_name = "https://telegra.ph/file/cb64af7c9d021781bcf28.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -173,10 +173,10 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="📝 Destek",
-                            url=f"https://t.me/Starbotdestek"),
+                            url=f"https://t.me/Sakin_Tiklama"),
                     InlineKeyboardButton(
-                            text="📍 Kanal",
-                            url=f"https://t.me/StarBotKanal"),                   
+                            text="📍 Sohbet",
+                            url=f"https://t.me/MajesteSohbetTr"),                   
                ],
             ]
         )
@@ -214,17 +214,17 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="📝 Destek",
-                            url=f"https://t.me/Starbotdestek"),
+                            url=f"https://t.me/Sakin_Tiklama"),
                     InlineKeyboardButton(
-                            text="📍 Kanal",
-                            url=f"https://t.me/StarBotKanal"),                   
+                            text="📍 Sohbet",
+                            url=f"https://t.me/MajesteSohbetTr"),                   
                ],
             ]
         )
     
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/754c32d3fe8dd9e5f4c08.jpg"
+            thumb_name = "https://telegra.ph/file/cb64af7c9d021781bcf28.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -232,10 +232,10 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="📝 Destek",
-                            url=f"https://t.me/Starbotdestek"),
+                            url=f"https://t.me/Sakin_Tiklama"),
                     InlineKeyboardButton(
-                            text="📍 Kanal",
-                            url=f"https://t.me/StarBotKanal"),                   
+                            text="📍 Sohbet",
+                            url=f"https://t.me/MajesteSohbetTr"),                   
                ],
             ]
         )
@@ -288,10 +288,10 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="📝 Destek",
-                            url=f"https://t.me/Starbotdestek"),
+                            url=f"https://t.me/Sakin_Tiklama"),
                     InlineKeyboardButton(
-                            text="📍 Kanal",
-                            url=f"https://t.me/StarBotKanal"),                   
+                            text="📍 Sohbet",
+                            url=f"https://t.me/MajesteSohbetTr"),                   
                ],
             ]
         )
