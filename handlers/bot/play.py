@@ -145,7 +145,7 @@ async def play(_, message: Message):
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i><b>Gözləyin! {user.first_name}, Köməkçini qrupa əlavə etmək üçün /katil yazın.</b></i>")
+            f"<i><b>Gözləyin! {user.first_name}, Köməkçini qrupa əlavə etmək üçün /qosul yazın.</b></i>")
         return
     
     audio = (
@@ -163,7 +163,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/cb64af7c9d021781bcf28.jpg"
+        thumb_name = "https://te.legra.ph/file/d77f44988dd1ce79e341f.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -173,10 +173,10 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
-                            url=f"https://t.me/UlviSup"),
+                            url=f"https://t.me/king_sohbet_33"),
                     InlineKeyboardButton(
                             text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
-                            url=f"https://t.me/UlviProject"),                   
+                            url=f"https://t.me/nihat_33"),                   
                ],
             ]
         )
@@ -214,17 +214,17 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
-                            url=f"https://t.me/UlviSup"),
+                            url=f"https://t.me/king_sohbet_33"),
                     InlineKeyboardButton(
                             text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
-                            url=f"https://t.me/UlviProject"),                   
+                            url=f"https://t.me/nihat_33"),                   
                ],
             ]
         )
     
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/cb64af7c9d021781bcf28.jpg"
+            thumb_name = "https://te.legra.ph/file/d77f44988dd1ce79e341f.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -232,10 +232,10 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
-                            url=f"https://t.me/UlviSup"),
+                            url=f"https://t.me/king_sohbet_33"),
                     InlineKeyboardButton(
                             text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
-                            url=f"https://t.me/UlviProject"),                   
+                            url=f"https://t.me/nihat_33"),                   
                ],
             ]
         )
@@ -288,10 +288,10 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
-                            url=f"https://t.me/UlviSup"),
+                            url=f"https://t.me/king_sohbet_33"),
                     InlineKeyboardButton(
                             text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
-                            url=f"https://t.me/UlviProject"),                   
+                            url=f"https://t.me/nihat_33"),                   
                ],
             ]
         )
