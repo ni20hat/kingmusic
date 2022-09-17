@@ -4,7 +4,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserAlreadyParticipant
 from helpers.decorators import errors, authorized_users_only
 
-@Client.on_message(filters.group & filters.command(["katil"]))
+@Client.on_message(filters.group & filters.command(["qosul"]))
 @authorized_users_only
 @errors
 async def addchannel(client, message):
@@ -13,41 +13,41 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Beni Önce Yönetici Yapmalısın</b>",
+            "<b>Əvvəlcə Məni Admin etməlisən</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "Sesmusic Asistan"
+        user.first_name =  "Kingmusic Asistan"
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id,"•> **Senin İsteğin Üzerine Geldim** !")
+        await USER.send_message(message.chat.id,"•> **İstəyinizlə Gəldim** !")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>Asistan Zaten Grupta Var</b>",
+            "<b>Assistent Artıq Qrupdadır</b>",
         )
         pass
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>Asistan {user.first_name} için yoğun katılma istekleri nedeniyle grubunuza katılamadı! Asistanın grupta yasaklanmadığından emin olun."
-            "Veya Asistan Hesabını Gruba Kendin Ekle </b>",
+            f"<b>{user.first_name}-ə qoşulmaq üçün çoxlu sorğulara görə Assistent qrupunuza qoşula bilmədi!  Köməkçinin qrupda qadağan edilmədiyinə əmin olun."
+             "Və ya Özünüzü Qruplaşdırmaq üçün Köməkçi Hesabı əlavə edin </b>",
         )
         return
     await message.reply_text(
-            "<b>Asistan Zaten Grupta Var</b>",
+            "<b>Assistent Artıq Qrupdadır</b>",
         )
     
-@USER.on_message(filters.group & filters.command(["ayril"]))
+@USER.on_message(filters.group & filters.command(["cix"]))
 async def rem(USER, message):
     try:
         await USER.leave_chat(message.chat.id)
     except:  
         await message.reply_text(
-            f"<b>Kullanıcı grubunuzdan ayrılamadı!."
-            "\n\nYada Kendin Çıkarabilirsin</b>",
+            f"<b>İstifadəçi qrupunuzu tərk edə bilməz!."
+             "\n\nYoxsa Onu Özünüz Silə bilərsiniz</b>",
         )
         return
