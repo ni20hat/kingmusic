@@ -133,19 +133,19 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "Musiqi köməkçisi qrupa qoşuldu")
+                        message.chat.id, "Musiqi köməkçisi qrupa qoşuldu.")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b><i>Mahnı oxunmur köməkçinin qadağan edilmədiyinə əmin olun</i></b>")
+                        f"<b><i>Mahnı oxunmur köməkçinin qadağan edilmədiyinə əmin olun.</i></b>")
     
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i><b>Gözləyin {user.first_name}, Köməkçini qrupa əlavə etmək üçün /katil yazın</b></i>")
+            f"<i><b>Gözləyin! {user.first_name}, Köməkçini qrupa əlavə etmək üçün /katil yazın.</b></i>")
         return
     
     audio = (
@@ -158,7 +158,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 360) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❌**"
+                f"**Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❕*"
             )
 
         file_name = get_file_name(audio)
@@ -278,7 +278,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**Sorğunuz tapılmadı, yenidən cəhd edin **"
+                "**Sorğunuz tapılmadı, yenidən cəhd edin. **"
             )
             print(str(e))
             return
@@ -298,7 +298,7 @@ async def play(_, message: Message):
     
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"** Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❌**"
+                f"** Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❕**"
             )
             return
         requested_by = message.from_user.first_name
