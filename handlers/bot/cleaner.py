@@ -20,9 +20,9 @@ async def clear_downloads(_, message: Message):
     if ls_dir:
         for file in os.listdir(downloads):
             os.remove(os.path.join(downloads, file))
-        await message.reply_text("`🗑️İndirilen tüm dosyalar kaldırıldı `")
+        await message.reply_text("`🗑️Bütün endirilmiş fayllar silindi `")
     else:
-        await message.reply_text("`Temizlenecek dosya bulundu`")
+        await message.reply_text("`Faylın təmizləndiyi tapıldı`")
 
         
 @Client.on_message(command("rmw") & ~filters.edited)
@@ -33,9 +33,9 @@ async def clear_raw(_, message: Message):
     if ls_dir:
         for file in os.listdir(raw_files):
             os.remove(os.path.join(raw_files, file))
-        await message.reply_text("`temizlik ayarlanıyor 🗑️`")
+        await message.reply_text("`təmizlik qurulur 🗑️`")
     else:
-        await message.reply_text("`Dosyalar hazır`")
+        await message.reply_text("`Fayllar hazırdır`")
 
 
 @Client.on_message(commandpro(["/clean"]) & ~filters.edited)
