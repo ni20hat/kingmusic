@@ -1,4 +1,4 @@
-# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @SHAILENDRA34 | 
+# 𝐃𝐎𝐍𝐓 𝐌𝐄𝐒𝐒 𝐖𝐈𝐓𝐇 𝐂𝐎𝐃𝐄𝐒 𝐂𝐎𝐏𝐘𝐑𝐈𝐆𝐇𝐓 @nihat_33 | 
 # 𝐃𝐞𝐚𝐫 𝐏𝐞𝐫𝐨 𝐩𝐩𝐥𝐬 𝐏𝐥𝐢𝐬𝐡 𝐃𝐨𝐧'𝐭 𝐫𝐞𝐦𝐨𝐯𝐞 𝐭𝐡𝐢𝐬 𝐥𝐢𝐧𝐞 𝐟𝐫𝐨𝐦 𝐡𝐞𝐫𝐞 🌚
 
 
@@ -12,18 +12,18 @@ from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
     
-    START_TEXT = """**⭐ Merhaba {}\n\n▫️Ben {} \n\n▫️Basit Bir Müzik Botuyum .\n\n▫️Beni Grubunuza ekleyip yönetici yapın ve müziğin keyfini çıkarın !**"""
+    START_TEXT = """**⭐ Salam {}\n\n▫️Mən {} \n\n▫️Mən Sadə Musiqi Botuyam.\n\n▫️Məni Qrupunuza əlavə edib , Admin yetkisi verərək musiqidən həzz alın !**"""
 
     START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="🎉 Beni Gruba Ekleyin 🎉", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
+                    InlineKeyboardButton(text="🎉 QRUPA ƏLAVƏ ET 🎉", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="📝 Sahibim ", url=f"https://t.me/MacroPem"),
-                    InlineKeyboardButton(text="🇹🇷 Sohbet ", url="https://t.me/MajesteSohbetTr"),
+                    InlineKeyboardButton(text="📝 Sahibim ", url=f"https://t.me/nihat_33"),
+                    InlineKeyboardButton(text="🇦🇿 Sohbet Qrupu ", url="https://t.me/king_sohbet_33"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="📚 Tüm Komutlar ", url="https://t.me/Sakin_Tiklama/5"),
+                    InlineKeyboardButton(text="📚 Tüm Komutlar ", url="https://t.me/gunes_isigi_33"),
                 ],
                 
             ]
@@ -35,15 +35,15 @@ def start_(bot, message):
 
 @bot.on_message(filters.command("hsusueue"))
 def help_(bot, message):
-    HELP_TXT = """Merhaba {}\nişte yardım menüsü \nGrubuna ekleyerek müzik keyfine başlayabilirsiniz @{} sorununuz nedir? 💫"""
+    HELP_TXT = """Salam {}\nsorğu yardım menyusu \nMusiqidən həzz almağa onu @{} qrupuna əlavə etməklə başlaya bilərsiniz probleminiz nədir?  💫"""
     
     HELP_BUTTON = [
         [
-            InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="basic_"),
-            InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin_cmd"),
+            InlineKeyboardButton(text="🕹️ Əsas əmrlər", callback_data="basic_"),
+            InlineKeyboardButton(text="🕹️ Admin əmrləri", callback_data="admin_cmd"),
         ],
         [
-            InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+            InlineKeyboardButton(text="🗑 bağla", callback_data="close_"),
             InlineKeyboardButton(text="⬅️ Geri", callback_data="HOME"),
         ],
     ]
@@ -57,15 +57,15 @@ def help_(bot, message):
 def callback_query(Client, callback: CallbackQuery):
     if callback.data == "help_":
     
-        HELP_TXT = f"""Merhaba işte yardım menüsü istediğiniz seçeneğinizi seçin ve keşfedin \nHer türlü yardım veya sorun için katılın @{SUPPORT_GROUP} Sorununuz nedir 💫?"""
+        HELP_TXT = f"""Salam burada yardım menyusu seçiminizi seçin və araşdırın \nHər hansı yardım və ya problem üçün qoşulun @{SUPPORT_GROUP} Probleminiz nədir 💫?"""
     
         HELP_BUTTON = [
             [
-                InlineKeyboardButton(text="🕹️ Temel komutlar", callback_data="bcd"),
-                InlineKeyboardButton(text="🕹️ Admin komutlar", callback_data="admin"),
+                InlineKeyboardButton(text="🕹️ Əsas əmrləri", callback_data="bcd"),
+                InlineKeyboardButton(text="🕹️ Admin Əmrləri", callback_data="admin"),
             ],
             [
-                InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+                InlineKeyboardButton(text="🗑 bagla", callback_data="close_"),
                 InlineKeyboardButton(text="⬅️ Geri", callback_data="HOME"),
             ],
         ]
@@ -75,18 +75,18 @@ def callback_query(Client, callback: CallbackQuery):
         )
     elif callback.data == "HOME":
  
-        START_TEXT = f"""Merhaba, ben {BOT_NAME} \nBasit ve gecikmesiz bir bottur\nHerhangi bir sorun olduğunda katılın 👉 @{SUPPORT_GROUP}\nya da help butonuna basınız  /help """
+        START_TEXT = f"""Salam, mən {BOT_NAME} \nBu, sadə və gecikməsiz bir botdur\nHər hansı probleminiz varsa, qoşulun 👉 @{SUPPORT_GROUP}\nvə ya kömək düyməsini basın /help """
         START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="Sohbet 💫", url=f"https://t.me/MajesteSohbetTr"),
-                    InlineKeyboardButton(text="Beni gruba ekle ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
+                    InlineKeyboardButton(text="Sohbet 💫", url=f"https://t.me/king_sohbet_33"),
+                    InlineKeyboardButton(text="Qrupa əlavə et ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
                     InlineKeyboardButton(text="Sahibim ⭐", url=f"https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton(text="Sahibim ✨", url="https://t.me/Yorgun_Birisi"),
+                    InlineKeyboardButton(text="Sahibim ✨", url="https://t.me/nihat_33"),
                 ],                
                 [                    
-                    InlineKeyboardButton(text="Komutlar 🕹️", callback_data="help_"),
+                    InlineKeyboardButton(text="Əmrlər 🕹️", callback_data="help_"),
                 ],
                 
             ]
@@ -99,14 +99,14 @@ def callback_query(Client, callback: CallbackQuery):
         B_HELP = """
 `ʙᴀsɪᴄ ᴄᴏᴍᴍᴀɴᴅs :- `
 
-/oynat (Sorgu, yt linki, ses dosyası ) - bu komutu kullanın ve müziğin keyfine bakın 
-/ytp (sorgu) - Daha gelişmiş muzik aramak için kullanın 
-/bul (Sorgu) - Bu komutla sevdiginiz şarkıları indirebilirsiniz 
-/ara (sorgu) - YouTube de arama yapar 
+/play (Sorğu, YouTube linki, səs dosyası ) - bu əmrdən istifadə edib musiqidən həzz alin. 
+/ytp (sorgu) - Daha ətraflı musiqi axtarmaq üçün istifadə edin
+/song (Sorgu) -Bu əmrlə sevimli mahnılarınızı yükləyə bilərsiniz
+/ara (sorgu) - YouTube də axtarış edər 
 """
         BUTTON = [
             [
-                InlineKeyboardButton(text="🗑 Kapat", callback_data="close_"),
+                InlineKeyboardButton(text="🗑 bağla", callback_data="close_"),
                 InlineKeyboardButton(text="⬅️ Geri", callback_data="help_"),
             ],
         ]
@@ -116,16 +116,16 @@ def callback_query(Client, callback: CallbackQuery):
         )
     elif callback.data == "admin":
         A_HELP = """
-`Admin komutlar :-`
+`Admin əmrləri :-`
 
-/durdur - Çalan müziği durdurur
-/devam - duran müziği devam ettirir
-/atla - sıradaki şarkıya geçer 
-/son - şarkıyı sonlandırır
-/katil - asistanı gruba ekler
+/pause - Musiqinin ifasını dayandırır
+/resume - Dayandırılmış musiqini davam etdirir
+/skip - növbəti mahnıya keçid edər 
+/end - musiqini sonlandırır
+/qosul - asistanı qrupa əlavə et
 
 
-`Sudo komutlar :-`
+`Sudo əmrləri :-`
 
 /rmf - Dosyayı veri tabanından temizler 
 /rmw - Veri tabanınından ham dosyaları temizler
@@ -134,7 +134,7 @@ def callback_query(Client, callback: CallbackQuery):
 """
         BUTTON = [
             [
-                InlineKeyboardButton(text="🗑 kapat", callback_data="close_"),
+                InlineKeyboardButton(text="🗑 bagla", callback_data="close_"),
                 InlineKeyboardButton(text="⬅️ Geri", callback_data="help_"),
             ],
         ]
