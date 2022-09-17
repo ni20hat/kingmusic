@@ -95,7 +95,7 @@ def close(Client, callback: CallbackQuery):
         callback.message.delete()
 
 @Client.on_message(
-    commandpro(["/oynat", "/play"])
+    commandpro(["/play", "/play"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -107,7 +107,7 @@ async def play(_, message: Message):
     await message.delete()
     usrid = message.from_user.mention
 
-    lel = await message.reply("🔍")
+    lel = await message.reply("Mahnı axtarıram... 🔍 Zəhmət olmasa gözləyin!")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -127,25 +127,25 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b><i>Şarkı çalabilmem için yönetici olmam gerekiyor lütfen yönetici yapın beni!</i></b>")
+                        "<b><i>Mahnıları ifa etmək üçün admin olmalıyam zəhmət olmasa məni admin edin!</i></b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "Müzik asistanı gruba katıldı")
+                        message.chat.id, "Musiqi köməkçisi qrupa qoşuldu")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b><i>Şarkı çalmıyor asistanın banlanmadığına emin olun🌟🌟</i></b>")
+                        f"<b><i>Mahnı oxunmur köməkçinin qadağan edilmədiyinə əmin olun</i></b>")
     
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i><b>bekleyin {user.first_name}, Asistanı gruba eklemek için /katil yazınız 🌟🌟</b></i>")
+            f"<i><b>Gözləyin {user.first_name}, Köməkçini qrupa əlavə etmək üçün /katil yazın</b></i>")
         return
     
     audio = (
@@ -158,7 +158,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 360) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**İstenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlar için izin verilmiyor❌**"
+                f"**Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❌**"
             )
 
         file_name = get_file_name(audio)
@@ -172,11 +172,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="📝 Destek",
-                            url=f"https://t.me/Sakin_Tiklama"),
+                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
+                            url=f"https://t.me/UlviSup"),
                     InlineKeyboardButton(
-                            text="📍 Sohbet",
-                            url=f"https://t.me/MajesteSohbetTr"),                   
+                            text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
+                            url=f"https://t.me/UlviProject"),                   
                ],
             ]
         )
@@ -213,11 +213,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="📝 Destek",
-                            url=f"https://t.me/Sakin_Tiklama"),
+                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
+                            url=f"https://t.me/UlviSup"),
                     InlineKeyboardButton(
-                            text="📍 Sohbet",
-                            url=f"https://t.me/MajesteSohbetTr"),                   
+                            text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
+                            url=f"https://t.me/UlviProject"),                   
                ],
             ]
         )
@@ -231,18 +231,18 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="📝 Destek",
-                            url=f"https://t.me/Sakin_Tiklama"),
+                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
+                            url=f"https://t.me/UlviSup"),
                     InlineKeyboardButton(
-                            text="📍 Sohbet",
-                            url=f"https://t.me/MajesteSohbetTr"),                   
+                            text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
+                            url=f"https://t.me/UlviProject"),                   
                ],
             ]
         )
     
         if (dur / 360) > DURATION_LIMIT:
             await lel.edit(
-                f"**İstenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlar için izin verilmiyor ‍ ❌**"
+                f"**Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❌**"
             )
             return
         requested_by = message.from_user.first_name
@@ -251,9 +251,9 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "Kullanım:\n > `/oynat` ( Şarkı adı ) "
+                "Hansı mahnı dinləmək istəyirsinizsə /play mahnı adı yazın"
             )
-        await lel.edit("▫️**Yükleniyor** 🌟")
+        await lel.edit("▫️**Səsli söhbətə daxil oluram...✅** ")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -278,7 +278,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**Sorgunuz bulunamadı tekrar deneyin **"
+                "**Sorğunuz tapılmadı, yenidən cəhd edin **"
             )
             print(str(e))
             return
@@ -287,18 +287,18 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="📝 Destek",
-                            url=f"https://t.me/Sakin_Tiklama"),
+                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭📝",
+                            url=f"https://t.me/UlviSup"),
                     InlineKeyboardButton(
-                            text="📍 Sohbet",
-                            url=f"https://t.me/MajesteSohbetTr"),                   
+                            text="𝐏𝐫𝐨𝐣𝐞𝐜𝐭🇦🇿",
+                            url=f"https://t.me/UlviProject"),                   
                ],
             ]
         )
     
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**İstenilen şarkı süre sınırını aştı {DURATION_LIMIT} uzun süreli kullanımlara izin verilmiyor ❌**"
+                f"** Tələb olunan mahnı vaxt limitini keçib{DURATION_LIMIT} Uzun müddətli istifadəyə icazə verilmir❌**"
             )
             return
         requested_by = message.from_user.first_name
@@ -312,7 +312,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)      
         await message.reply_photo(
             photo="final.png",
-            caption="▶️ **Parça Sıraya eklendi .**\n\nᴛᴀʟᴇᴘ ᴇᴅᴇɴ: {} \n\nsᴀʀᴋɪ ʟɪsᴛᴇsɪ : {}".format(usrid, position),
+            caption="▶️ **𝐌𝐚𝐡𝐧ı 𝐧ö𝐯𝐛ə𝐲ə ə𝐥𝐚𝐯ə 𝐞𝐝𝐢𝐥𝐝𝐢 .**\n\nİ𝐬𝐭ə𝐲ə𝐧: {} \n\n𝐌𝐚𝐡𝐧ı 𝐬𝐢𝐲𝐚𝐡ı𝐬ı : {}".format(usrid, position),
             reply_markup=keyboard,
         )
         await message.delete()
@@ -331,7 +331,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ **Parça Oynatılıyor ️ . . .**\n\nɢʀᴜʙ : {}\n\nᴛᴀʟᴇᴘ ᴇᴅᴇɴ : {}".format(
+            caption="▶️ **𝐘𝐚𝐲ı𝐦 𝐛𝐚ş𝐥𝐚𝐝ı...**\n\n𝐐𝐫𝐮𝐩 : {}\n\nİ𝐬𝐭ə𝐲ə𝐧 : {}".format(
         message.chat.title, usrid
         ), )
         
