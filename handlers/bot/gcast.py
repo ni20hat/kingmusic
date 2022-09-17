@@ -8,25 +8,25 @@ from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from config import SUDO_USERS
 
-HERO_IMG = "https://telegra.ph/file/d9a88ee1910a034c62c79.jpg"
+HERO_IMG = "https://te.legra.ph/file/d77f44988dd1ce79e341f.jpg"
 
-@Client.on_message(filters.command("gcast"))
+@Client.on_message(filters.command("kcast"))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
     if message.from_user.id not in SUDO_USERS:
         return
     else:
-        sas = await message.reply("`Yayın başlıyor, bekleyiniz ‍💻`")
+        sas = await message.reply("`Yayım başlayır, gözləyin ‍💻`")
         if not message.reply_to_message:
-            await sas.edit("**__Herhangi bir mesajı bana ver__**")
+            await sas.edit("**__Mənə hər hansı bir mesaj verin__**")
             return
         hero = message.reply_to_message.text
         async for dialog in Client.iter_dialogs():
             try:
                 await Client.send_message(dialog.chat.id, hero)
                 sent = sent+1
-                await hyper.edit(f"`Yayınlanıyor` \n\n**Başarılı :** `{sent}` Sohbetler👾 \n**Başarısız :** {failed} Sohbetler🗑️")
+                await hyper.edit(f"`Yayınlanıyor` \n\n**Başarılı :** `{sent}` Sohbetler \n**Başarısız :** {failed} Sohbetler🗑️")
                 await asyncio.sleep(3)
             except:
                 failed=failed+1
